@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link rel="stylesheet" href="./example.css">
+</head>
+
+<body>
+ <header>
+  <div class="container">
+   <div class="header_inner">
+    <div class="logo">LOGO</div>
+    <div class="nav">
+     <a href="">About</a>
+     <a href="">About</a>
+     <a href="">About</a>
+     <a href="">About</a>
+    </div>
+    <div class="registerPage">
+     Login
+    </div>
+   </div>
+  </div>
+ </header>
+
+
+ <div class="modal-container " id="modal">
+  <div class="modal-window">
+   <div class="modal-top">
+    <div class="modal-logo">LOGO</div>
+    <span class="modal-close" onclick="closeModal()">X</span>
+   </div>
+   <div class="modal-content">
+    <div class="email">
+     <input type="email" class="emailInp" placeholder="example@gmail.com">
+     <span class="error ">Некоректный емаил!</span>
+    </div>
+    <div class="password">
+     <input type="password" class="passwordInp" placeholder="Password">
+     <span class="error">Некоректный пароль!</span>
+     <div class="chekPass">
+      <input type="checkbox" class="chek" id="chek"> <label for="chek">Показать пароль</label>
+     </div>
+    </div>
+
+    <div class="log">
+     <div class="navigateRegister">
+      У вас нет аккаунт? <br> <span class="regis">Регистрация</span>
+     </div>
+     <div class="btn">
+      <button class="btn_b">Войти</button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <script src="./exapmle.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Водостоки тротуарные - Мастер Строй</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./Assets/icon-site.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body class="gutter-html">
+    <div class="all-header">
+      <div class="container">
+        <div class="allHeader-container">
+          <div class="user-profile">
+            <img src="./Assets/photo.png" alt="" /><span id="userName"></span>
+          </div>
+          <a class="comeback" href="main.html">Вернутся на основную страницу</a>
+          <div class="header-menu-all" onclick="openMenu()">|||</div>
+        </div>
+      </div>
+    </div>
+    <div class="gutter">
+      <div class="container">
+        <h1 class="gutter-title">Водостоки тротуарные</h1>
+        <div class="gutter-container">
+          <div class="gutter-card">
+            <div class="bord-content">
+              <img
+                class="gutter-img"
+                src="./gutters/gutter1.png"
+                alt="Водосток бетон серый"
+              />
+              <div class="content-span">
+                <span class="card-title">Водосток бетон серый</span>
+                <span class="card-size">Размер: 500х160х50мм</span>
+                <span class="card-count">Количество: 2,38 шт/кв.м</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">384 руб кв/м</span>
+              <span class="build-description"
+                >Водосток бетон серый – прочный и надёжный элемент для отвода
+                воды.</span
+              >
+              <span class="build-material"
+                >Материал: высококачественный бетон</span
+              >
+              <span class="build-advantages"
+                >Преимущества: <br />прочность, долговечность.</span
+              >
+              <div
+                class="plus"
+                id="top-card1-1"
+                data-product-id="1"
+                data-category="gutter"
+                onclick="addToCartFromGutters(1,'gutter')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="gutter-card">
+            <div class="bord-content">
+              <img
+                class="gutter-img"
+                src="./gutters/gutter2.png"
+                alt="Водосток бетон красный"
+              />
+              <div class="content-span">
+                <span class="card-title">Водосток бетон красный</span>
+                <span class="card-size">Размер: 500х150х50мм</span>
+                <span class="card-count">Количество: 13.33 шт/кв.м</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">410 руб кв/м</span>
+              <span class="build-description"
+                >Водосток бетон красный – прочный и надёжный элемент для отвода
+                воды.</span
+              >
+              <span class="build-material"
+                >Материал: высококачественный бетон</span
+              >
+              <span class="build-advantages"
+                >Преимущества: <br />прочность, долговечность.</span
+              >
+              <div
+                class="plus"
+                id="top-card1-2"
+                data-product-id="2"
+                data-category="gutter"
+                onclick="addToCartFromGutters(2,'gutter')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="gutter-card">
+            <div class="bord-content">
+              <img
+                class="gutter-img"
+                src="./gutters/gutter3.png"
+                alt="Лоток водоотводный бетонный"
+              />
+              <div class="content-span">
+                <span class="card-title">Лоток водоотводный бетонный</span>
+                <span class="card-size">Размер: 1000x165x165мм</span>
+                <span class="card-count">Количество: 6.06 шт/кв.м</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">1089 руб кв/м</span>
+              <span class="build-description"
+                >Лоток водоотводный бетонный – прочный и надёжный элемент для
+                отвода воды.</span
+              >
+              <span class="build-material"
+                >Материал: высококачественный бетон</span
+              >
+              <span class="build-advantages"
+                >Преимущества: <br />прочность, долговечность.</span
+              >
+              <div
+                class="plus"
+                id="top-card1-3"
+                data-product-id="3"
+                data-category="gutter"
+                onclick="addToCartFromGutters(3,'gutter')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="gutter-card">
+            <div class="bord-content">
+              <img
+                class="gutter-img"
+                src="./gutters/gutter4.png"
+                alt="Лоток водоотводный бетонный"
+              />
+              <div class="content-span">
+                <span class="card-title">Лоток водоотводный бетонный</span>
+                <span class="card-size">Размер: 1000x160x80мм</span>
+                <span class="card-count">Количество: 6.25 шт/кв.м</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">4143 руб кв/м</span>
+              <span class="build-description"
+                >Лоток водоотводный бетонный – прочный и надёжный элемент для
+                отвода воды.</span
+              >
+              <span class="build-material"
+                >Материал: высококачественный бетон</span
+              >
+              <span class="build-advantages"
+                >Преимущества: <br />прочность, долговечность.</span
+              >
+              <div
+                class="plus"
+                id="top-card1-4"
+                data-product-id="4"
+                data-category="gutter"
+                onclick="addToCartFromGutters(4,'gutter')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-bg"></div>
+    <div class="menu">
+      <img src="./Assets/menu-logo.png" alt="" />
+      <a href="personal.html" class="personal-cabinet">Личный кабинет</a>
+      <span onclick="showCart()" class="cart-link">Корзина</span>
+      <label class="switch">
+        <input type="checkbox" id="toggleSwitch" />
+        <span class="slider"></span>
+      </label>
+      <a href="more-details.html" class="details">О нас подробнее</a>
+    </div>
+    <div class="cart hidden">
+      <div class="cart-header">
+        <img
+          src="./Assets/white-x.png"
+          class="cart-x"
+          onclick="getOffCart()"
+          alt=""
+        />
+        <span id="cartOrderErr"></span>
+        <button class="cartOrderBtn" onclick="orderModalOpen()">
+          Заказать товары
+        </button>
+      </div>
+
+      <div class="cart-box"></div>
+    </div>
+
+    <div class="deliveryOrder hidden">
+      <div class="deliveryOrder-container">
+        <span class="deliveryOrder-title">Заказать доставку</span>
+        <form id="delivery-form">
+          <div class="date-order">
+            <label for="delivery-date">Выберите дату доставки</label>
+            <input
+              type="date"
+              id="delivery-date"
+              class="order-time"
+              min=""
+              max=""
+            />
+            <span id="dateError"></span>
+          </div>
+          <div class="deliveryOrder-adress">
+            <span class="address-input">Укажите адрес доставки: </span>
+            <p class="map-help">Чтобы убрать метку адреса нажмите на метку</p>
+
+            <div class="map" id="map"></div>
+          </div>
+          <span id="addressError"></span>
+          <button type="submit" class="order-btn">Оформить доставку</button>
+        </form>
+      </div>
+    </div>
+    <div class="deliverySuccess-bg hidden">
+      <div class="deliverySuccess-container">
+        <img
+          src="./Assets/x.png"
+          alt=""
+          class="deliveryClose"
+          onclick="deliverySuccessClose()"
+        />
+        <h1 class="deliverySuccess-title">Доставка оформлена</h1>
+        <div class="hz">
+          <span id="deliveryNumber" class="deliveryNumber"
+            >Номер вашего заказа:</span
+          >
+          <span id="deliverySuccess-number" class="deliveryNum"></span>
+          <span class="deliverySuccess-costTitle">Цена доставки товаров:</span>
+          <span class="deliverySuccess-cost" id="deliverySuccess-cost"></span>
+          <span class="deliverySuccess-addressTitle"
+            >Доставка оформлена на адрес:</span
+          >
+          <span class="deliverySuccess-address" id="deliverySuccess-address">
+          </span>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./gutter.js"></script>
+  </body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Прессованные плитки - Мастер Строй</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./Assets/icon-site.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body class="plites-html">
+    <div class="all-header">
+      <div class="container">
+        <div class="allHeader-container">
+          <div class="user-profile">
+            <img src="./Assets/photo.png" alt="" /><span id="userName"></span>
+          </div>
+          <a class="comeback" href="main.html">Вернутся на основную страницу</a>
+          <div class="header-menu-all" onclick="openMenu()">|||</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="container">
+        <h1 class="product-title">Прессованные плитки</h1>
+        <div class="top-container">
+          <div class="plite-card">
+            <div class="card-content">
+              <img class="plite-img" src="./plite/plite-1.jpg" alt="" />
+              <div class="content-span">
+                <span class="card-title"
+                  >Тротуарная 12-кирпичей 500x500x50мм</span
+                >
+                <span class="card-size">Размер: 500x500x50мм</span>
+                <span class="card-count">Количество: 5 шт/кв.м</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">470 руб кв/м</span>
+              <span class="color-title">Красный</span>
+              <span class="price-m2">530 руб кв/м</span>
+              <span class="color-title">Коричневый</span>
+              <span class="price-m2">590 руб кв/м</span>
+              <span class="color-title">Желтый</span>
+              <span class="price-m2">По запросу</span>
+              <span class="color-title">Другие цвета</span>
+              <span class="price-m2">510 руб кв/м</span>
+              <div
+                class="plus"
+                id="top-card1"
+                data-product-id="1"
+                data-category="plites"
+                onclick="addToCartFromPlites(1,'plites')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="plite-card">
+            <div class="card-content">
+              <img class="plite-img" src="./plite/plite-2.jpg" alt="" />
+              <div class="content-span">
+                <span class="card-title"
+                  >Тротуарная Калифорния 300x300x30мм</span
+                >
+                <span class="card-size">Размер: 300x300x30мм</span>
+                <span class="card-count">Количество: 1 0 пара шт/кв.м</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">440 руб кв/м</span>
+              <span class="color-title">Красный</span>
+              <span class="price-m2">500 руб кв/м</span>
+              <span class="color-title">Коричневый</span>
+              <span class="price-m2">550 руб кв/м</span>
+              <span class="color-title">Желтый</span>
+              <span class="price-m2">700 руб кв/м</span>
+              <span class="color-title">Другие цвета</span>
+              <span class="price-m2">По запросу</span>
+              <div
+                class="plus"
+                id="top-card2"
+                data-product-id="2"
+                data-category="plites"
+                onclick="addToCartFromPlites(2,'plites')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="plite-card">
+            <div class="card-content">
+              <img class="plite-img" src="./plite/plite-3.jpg" alt="" />
+              <div class="content-span">
+                <span class="card-title">Тротуарная Паркет 300x300x30мм</span>
+                <span class="card-size">Размер: 300x300x30мм</span>
+                <span class="card-count">Количество: 9 шт/кв.м</span>
+                <span class="card-color-count">Цвета в наличии: 8</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">440 руб кв/м</span>
+              <span class="color-title">Красный</span>
+              <span class="price-m2">500 руб кв/м</span>
+              <span class="color-title">Коричневый</span>
+              <span class="price-m2">550 руб кв/м</span>
+              <span class="color-title">Желтый</span>
+              <span class="price-m2">700 руб кв/м</span>
+              <span class="color-title">Другие цвета</span>
+              <span class="price-m2">По запросу</span>
+              <div
+                class="plus"
+                id="top-card3"
+                data-product-id="3"
+                data-category="plites"
+                onclick="addToCartFromPlites(3,'plites')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="plite-card">
+            <div class="card-content">
+              <img class="plite-img" src="./plite/plite-4.jpg" alt="" />
+              <div class="content-span">
+                <span class="card-title">Катушка 250x160x60</span>
+                <span class="card-size">Размер: 250x160x60мм</span>
+                <span class="card-count">Количество: 30 шт/кв.м</span>
+                <span class="card-color-count">Цвета в наличии: 8</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">440 руб кв/м</span>
+              <span class="color-title">Красный</span>
+              <span class="price-m2">500 руб кв/м</span>
+              <span class="color-title">Коричневый</span>
+              <span class="price-m2">550 руб кв/м</span>
+              <span class="color-title">Желтый</span>
+              <span class="price-m2">700 руб кв/м</span>
+              <span class="color-title">Другие цвета</span>
+              <span class="price-m2">По запросу</span>
+              <div
+                class="plus"
+                id="top-card4"
+                data-product-id="4"
+                data-category="plites"
+                onclick="addToCartFromPlites(4,'plites')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="plite-card">
+            <div class="card-content">
+              <img class="plite-img" src="./plite/plite-5.jpg" alt="" />
+              <div class="content-span">
+                <span class="card-title">Кирпичик 250x125x60</span>
+                <span class="card-size">Размер: 250x125x60мм</span>
+                <span class="card-count">Количество: 32 шт/кв.м</span>
+                <span class="card-color-count">Цвета в наличии: 8</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">440 руб кв/м</span>
+              <span class="color-title">Красный</span>
+              <span class="price-m2">500 руб кв/м</span>
+              <span class="color-title">Коричневый</span>
+              <span class="price-m2">550 руб кв/м</span>
+              <span class="color-title">Желтый</span>
+              <span class="price-m2">700 руб кв/м</span>
+              <span class="color-title">Другие цвета</span>
+              <span class="price-m2">По запросу</span>
+              <div
+                class="plus"
+                id="top-card5"
+                data-product-id="5"
+                data-category="plites"
+                onclick="addToCartFromPlites(5,'plites')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="plite-card">
+            <div class="card-content">
+              <img class="plite-img" src="./plite/plite-6.jpg" alt="" />
+              <div class="content-span">
+                <span class="card-title">Волна 250x125x60</span>
+                <span class="card-size">Размер: 250x125x60</span>
+                <span class="card-count">Количество: 32/40 шт/кв.м</span>
+                <span class="card-color-count">Цвета в наличии: 8</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">450 руб кв/м</span>
+              <span class="color-title">Красный</span>
+              <span class="price-m2">500 руб кв/м</span>
+              <span class="color-title">Коричневый</span>
+              <span class="price-m2">550 руб кв/м</span>
+              <span class="color-title">Желтый</span>
+              <span class="price-m2">700 руб кв/м</span>
+              <span class="color-title">Другие цвета</span>
+              <span class="price-m2">По запросу</span>
+              <div
+                class="plus"
+                id="top-card6"
+                data-product-id="6"
+                data-category="plites"
+                onclick="addToCartFromPlites(6,'plites')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart hidden">
+      <span class="cart-title" onclick="getOffCart()">Скрыть корзину</span>
+      <span id="cartOrderErr"></span>
+      <button class="cartOrderBtn" onclick="orderModalOpen()">
+        Заказать товары
+      </button>
+      <div class="cart-box">
+        <!-- <div class="cart-card">
+          <img src="./Assets/top-cards/top-card2.svg" alt="" />
+          <span>Брусчатка 200х100х50</span>
+          <span class="cart-price">180₽</span>
+          <div class="count">
+            <button>-</button>
+            <span class="product-count">1</span>
+            <button>+</button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="menu-bg"></div>
+    <div class="menu">
+      <img src="./Assets/menu-logo.png" alt="" />
+      <span onclick="showCart()" class="cart-link">Корзина</span>
+      <a href="personal.html" class="personal-cabinet">Личный кабинет</a>
+      <a href="more-details.html" class="details">О нас подробнее</a>
+    </div>
+    <div class="deliveryOrder hidden">
+      <div class="deliveryOrder-container">
+        <span class="deliveryOrder-title">Заказать доставку</span>
+        <form id="delivery-form" onsubmit="return createOrder()">
+          <div class="date-order">
+            <label for="delivery-date">Выберите дату доставки</label>
+            <input
+              type="date"
+              id="delivery-date"
+              class="order-time"
+              min=""
+              max=""
+            />
+            <span id="dateError"></span>
+          </div>
+          <div class="deliveryOrder-adress">
+            <span class="address-input">Укажите адрес доставки: </span>
+            <p class="map-help">Чтобы убрать метку адреса нажмите на метку</p>
+
+            <div class="map" id="map"></div>
+          </div>
+          <span id="addressError"></span>
+          <button type="submit" class="order-btn">Оформить доставку</button>
+        </form>
+      </div>
+    </div>
+    <div class="deliverySuccess-bg hidden">
+      <div class="deliverySuccess-container">
+        <img
+          src="./Assets/x.png"
+          alt=""
+          class="deliveryClose"
+          onclick="deliverySuccessClose()"
+        />
+        <h1 class="deliverySuccess-title">Доставка оформлена</h1>
+        <div class="hz">
+          <span id="deliveryNumber" class="deliveryNumber"
+            >Номер вашего заказа:</span
+          >
+          <span id="deliverySuccess-number" class="deliveryNum"></span>
+          <span class="deliverySuccess-costTitle">Цена доставки товаров:</span>
+          <span class="deliverySuccess-cost" id="deliverySuccess-cost"></span>
+          <span class="deliverySuccess-addressTitle"
+            >Доставка оформлена на адрес:</span
+          >
+          <span class="deliverySuccess-address" id="deliverySuccess-address">
+          </span>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./plites.js"></script>
+  </body>
+</html>

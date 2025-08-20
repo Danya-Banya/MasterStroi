@@ -1,0 +1,123 @@
+/* 
+.container{
+    width: 80%;
+    margin: 100px auto;
+    padding: 100px; */
+/* background-color: #f2f2f2;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.buton {
+    border-color: black;
+    border-radius: 30%;
+    width: 30px;
+    height: 30px;
+    color: wheat;
+}
+
+.divan{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+} */
+
+.alert {
+  background-color: silver;
+  margin: 410px;
+  margin-top: 0px;
+  padding: 30px;
+  border-radius: 4%;
+}
+
+.btn {
+  margin-left: 375px;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  border-radius: 50px;
+  border-color: blue;
+  background-color: blue;
+  color: white;
+}
+
+.butn {
+    margin-left: 375px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    border-radius: 50px;
+    border-color: blue;
+    background-color: blue;
+    color: white;
+  }
+
+.Hello {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.podt {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.btn_ok {
+  width: 100px;
+  border-radius: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-color: blue;
+  background-color: cornflowerblue;
+  font-family:"Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif ;
+}
+
+.btn_ok:hover{
+    background-color: green;
+    color: white;
+    transition: 1s;
+}
+
+
+.btn_No {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100px;
+  border-radius: 40px;
+  border-color: blue;
+  background-color: cornflowerblue;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.btn_No:hover{
+    color: white;
+    
+    transition: 1s ;
+    background-color: red;
+    
+}
+
+.confirm {
+  background-color: silver;
+  margin: 410px;
+  margin-top: 0px;
+  padding: 30px;
+  border-radius: 4%;
+}
+
+
+.negative {
+    background-color: silver;
+    margin: 410px;
+    margin-top: 0px;
+    padding: 30px;
+    border-radius: 4%;
+  }
+
+.RuE{
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.pod{
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

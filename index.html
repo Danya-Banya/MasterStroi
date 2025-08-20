@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    asdad
+    <script>
+      let users = [
+        {
+          id: 1,
+          name: "Ali",
+          userName: "ali@gmail.com",
+          password: "1234",
+        },
+        {
+          id: 2,
+          name: "Alihan",
+          userName: "alihan@gmail.com",
+          password: "1234",
+        },
+      ];
+
+      function checkedUsers(userName, password) {
+        return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+                let foundUser = users.find((user)=> user.userName === userName && user.password === password)
+                if(foundUser){
+                    resolve('Правильно')
+                } else {
+                    reject("Неправильно")
+                }
+        }, 1000);
+       }) 
+      }
+      checkedUsers("alihan@gmail.com", "1234")
+      .then(result => console.log(result))
+      .catch(oshibka => console.log(oshibka))
+
+      function sum(a,b, c){
+        return new Promise((resolve, reject)=>{
+            setTimeout(() => {
+                let isNumber = !isNaN(a) && !isNaN(b) && !isNaN(c)
+                if(isNumber){
+                    resolve(Number(a) + Number(b), Number(c))
+                } else{
+                    reject()
+                }
+            }, 1000);
+        })
+      }
+      sum('1', '5', 'ss', 6)
+    </script>
+  </body>
+</html>

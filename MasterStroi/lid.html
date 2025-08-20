@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Крышки на столбы - Мастер Строй</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./Assets/icon-site.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body class="lid-body">
+    <div class="all-header">
+      <div class="container">
+        <div class="allHeader-container">
+          <div class="user-profile">
+            <img src="./Assets/photo.png" alt="" /><span id="userName"></span>
+          </div>
+          <a class="comeback" href="main.html">Вернутся на основную страницу</a>
+          <div class="header-menu-all" onclick="openMenu()">|||</div>
+        </div>
+      </div>
+    </div>
+    <div class="lid">
+      <div class="container">
+        <h1 class="lid-title">Крышки на столбы</h1>
+        <div class="lid-container">
+          <div class="lid-card">
+            <div class="bord-content">
+              <img
+                class="lid-img"
+                src="./lids/lid1.png"
+                alt="Колпак на столб 400x400"
+              />
+              <div class="content-span">
+                <span class="card-title">Колпак на столб 400x400</span>
+                <span class="card-size">Размер: 400x400мм</span>
+                <span class="card-count">Количество: 6.25 шт/кв.м</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">184 руб кв/м</span>
+              <span class="build-description">Прочный и надежный элемент.</span>
+              <span class="build-material"
+                >Материал: высококачественный бетон</span
+              >
+              <span class="build-advantages"
+                >Преимущества: прочность, долговечность.</span
+              >
+              <div
+                class="plus"
+                id="top-card1-1"
+                data-product-id="1"
+                data-category="lid"
+                onclick="addToCartFromLids(1,'lid')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lid-card">
+            <div class="bord-content">
+              <img
+                class="lid-img"
+                src="./lids/lid2.png"
+                alt="Форма на столб Пирамида"
+              />
+              <div class="content-span">
+                <span class="card-title">Форма на столб "Пирамида"</span>
+                <span class="card-size">Размер: 550х550x140мм</span>
+                <span class="card-count">Количество: 3.31 шт/кв.м</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">1300 руб кв/м</span>
+              <span class="build-description">Прочный и надежный элемент.</span>
+              <span class="build-material"
+                >Материал: высококачественный бетон</span
+              >
+              <span class="build-advantages"
+                >Преимущества: прочность, долговечность.</span
+              >
+              <div
+                class="plus"
+                id="top-card1-2"
+                data-product-id="2"
+                data-category="lid"
+                onclick="addToCartFromLids(2,'lid')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lid-card">
+            <div class="bord-content">
+              <img
+                class="lid-img"
+                src="./lids/lid3.png"
+                alt="Форма архитектурная на столб"
+              />
+              <div class="content-span">
+                <span class="card-title">Форма архитектурная на столб</span>
+                <span class="card-size">Размер: 500х500x220мм</span>
+                <span class="card-count">Количество: 3.31 шт/кв.м</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">1500 руб кв/м</span>
+              <span class="build-description">Прочный и надежный элемент.</span>
+              <span class="build-material"
+                >Материал: высококачественный бетон</span
+              >
+              <span class="build-advantages"
+                >Преимущества: прочность, долговечность.</span
+              >
+              <div
+                class="plus"
+                id="top-card1-3"
+                data-product-id="3"
+                data-category="lid"
+                onclick="addToCartFromLids(3,'lid')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lid-card">
+            <div class="bord-content">
+              <img
+                class="lid-img"
+                src="./lids/lid4.png"
+                alt="Крышка на столб двухярусная"
+              />
+              <div class="content-span">
+                <span class="card-title">Крышка на столб двухярусная</span>
+                <span class="card-size">Размер: 450x450x45мм</span>
+                <span class="card-count">Количество: 3.31 шт/кв.м</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">1230 руб кв/м</span>
+              <span class="build-description">Прочный и надежный элемент.</span>
+              <span class="build-material"
+                >Материал: высококачественный бетон</span
+              >
+              <span class="build-advantages"
+                >Преимущества: прочность, долговечность.</span
+              >
+              <div
+                class="plus"
+                id="top-card1-4"
+                data-product-id="4"
+                data-category="lid"
+                onclick="addToCartFromLids(4,'lid')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="lid-card">
+            <div class="bord-content">
+              <img
+                class="lid-img"
+                src="./lids/lid5.png"
+                alt="Колпак на столб двойной"
+              />
+              <div class="content-span">
+                <span class="card-title">Колпак на столб двойной</span>
+                <span class="card-size">Размер: 390x390мм</span>
+                <span class="card-count">Количество: 3.31 шт/кв.м</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">1150 руб кв/м</span>
+              <span class="build-description">Прочный и надежный элемент.</span>
+              <span class="build-material"
+                >Материал: высококачественный бетон</span
+              >
+              <span class="build-advantages"
+                >Преимущества: прочность, долговечность.</span
+              >
+              <div
+                class="plus"
+                id="top-card1-5"
+                data-product-id="5"
+                data-category="lid"
+                onclick="addToCartFromLids(5,'lid')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="lid-card">
+            <div class="bord-content">
+              <img
+                class="lid-img"
+                src="./lids/lid6.png"
+                alt="Колпак на столб двойной"
+              />
+              <div class="content-span">
+                <span class="card-title">Колпак на столб двойной</span>
+                <span class="card-size">Размер: 290x290мм</span>
+                <span class="card-count">Количество: 3.31 шт/кв.м</span>
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">1390 руб кв/м</span>
+              <span class="build-description">Прочный и надежный элемент.</span>
+              <span class="build-material"
+                >Материал: высококачественный бетон</span
+              >
+              <span class="build-advantages"
+                >Преимущества: прочность, долговечность.</span
+              >
+              <div
+                class="plus"
+                id="top-card1-6"
+                data-product-id="6"
+                data-category="lid"
+                onclick="addToCartFromLids(6,'lid')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-bg"></div>
+    <div class="menu">
+      <img src="./Assets/menu-logo.png" alt="" />
+      <a href="personal.html" class="personal-cabinet">Личный кабинет</a>
+      <span onclick="showCart()" class="cart-link">Корзина</span>
+      <label class="switch">
+        <input type="checkbox" id="toggleSwitch" />
+        <span class="slider"></span>
+      </label>
+      <a href="more-details.html" class="details">О нас подробнее</a>
+    </div>
+    <div class="cart hidden">
+      <div class="cart-header">
+        <img
+          src="./Assets/white-x.png"
+          class="cart-x"
+          onclick="getOffCart()"
+          alt=""
+        />
+        <span id="cartOrderErr"></span>
+        <button class="cartOrderBtn" onclick="orderModalOpen()">
+          Заказать товары
+        </button>
+      </div>
+
+      <div class="cart-box"></div>
+    </div>
+
+    <div class="deliveryOrder hidden">
+      <div class="deliveryOrder-container">
+        <span class="deliveryOrder-title">Заказать доставку</span>
+        <form id="delivery-form">
+          <div class="date-order">
+            <label for="delivery-date">Выберите дату доставки</label>
+            <input
+              type="date"
+              id="delivery-date"
+              class="order-time"
+              min=""
+              max=""
+            />
+            <span id="dateError"></span>
+          </div>
+          <div class="deliveryOrder-adress">
+            <span class="address-input">Укажите адрес доставки: </span>
+            <p class="map-help">Чтобы убрать метку адреса нажмите на метку</p>
+
+            <div class="map" id="map"></div>
+          </div>
+          <span id="addressError"></span>
+          <button type="submit" class="order-btn">Оформить доставку</button>
+        </form>
+      </div>
+    </div>
+    <div class="deliverySuccess-bg hidden">
+      <div class="deliverySuccess-container">
+        <img
+          src="./Assets/x.png"
+          alt=""
+          class="deliveryClose"
+          onclick="deliverySuccessClose()"
+        />
+        <h1 class="deliverySuccess-title">Доставка оформлена</h1>
+        <div class="hz">
+          <span id="deliveryNumber" class="deliveryNumber"
+            >Номер вашего заказа:</span
+          >
+          <span id="deliverySuccess-number" class="deliveryNum"></span>
+          <span class="deliverySuccess-costTitle">Цена доставки товаров:</span>
+          <span class="deliverySuccess-cost" id="deliverySuccess-cost"></span>
+          <span class="deliverySuccess-addressTitle"
+            >Доставка оформлена на адрес:</span
+          >
+          <span class="deliverySuccess-address" id="deliverySuccess-address">
+          </span>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./lid.js"></script>
+  </body>
+</html>

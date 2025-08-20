@@ -1,0 +1,63 @@
+*{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+background-color: #2a2b2b;
+}
+
+.container{
+    max-width: 1200px;
+ width: 100%;
+ margin: 0 auto;
+}
+
+.tablle_table{
+    width: 200px;
+    text-align: center;
+    height: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 470px;
+    background-color: #828f8f;
+    border: 2px black solid;
+    color: white;
+}
+
+.tablle{
+    display: flex;
+    gap: 10px;
+}
+
+.ok{
+    width:50px;
+    height: 30px;
+    border: 2px black solid;
+    background-color:darkslategrey;
+    cursor: pointer;
+}
+
+.ok2{
+    width:50px;
+    height: 30px;
+    border: 2px black solid;
+    background-color:darkslategrey;
+    cursor: pointer;
+}
+
+.fastFood{
+    width: 200px;
+    text-align: center;
+    height: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 470px;
+    background-color: #828f8f;
+    border: 2px black solid;
+    color: white;
+}

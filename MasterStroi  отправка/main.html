@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мастер Строй</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./Assets/icon-site.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="Assets/fonts/Montserrat-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="Assets/fonts/Montserrat-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body id="main-body">
+    <div class="info-header">
+      <div class="container">
+        <div class="info-header-item">
+          <div class="info-address">
+            <img src="./Assets/info-header-assets/location.svg" alt="Адрес" />
+            <p>
+              Волоколамский район,<br />
+              пос. Чисмена, ул. Центральная, 1
+            </p>
+          </div>
+          <div class="info-work">
+            <img
+              src="./Assets/info-header-assets/clock.svg"
+              alt="Часы работы"
+            />
+            <p>
+              Режим работы:<br />
+              с 8:00 до 20:00
+            </p>
+          </div>
+          <div class="info-numbers">
+            <img
+              src="./Assets/info-header-assets/phone-call.svg"
+              alt="Телефон"
+            />
+            <div class="numbers1">
+              <p>+7 (926) 105-94-14</p>
+              <p>+7 (910) 470-67-97</p>
+            </div>
+            <div class="numbers2">
+              <p>+7 (499) 994-90-99</p>
+            </div>
+          </div>
+          <button class="number-btn" onclick="orderCall()">
+            Заказать звонок
+          </button>
+          <div class="header-menu" onclick="openMenu()">
+            <img src="./Assets/info-header-assets/menu-logo.png" alt="" />
+            <div class="new hidden">
+              <svg
+                width="20px"
+                height="20px"
+                viewBox="0 0 100 100"
+                id="basketMassage"
+              >
+                <circle cx="50" cy="50" r="40" fill="red" />
+                <text
+                  x="50"
+                  y="50"
+                  font-family="Arial"
+                  font-size="100"
+                  text-anchor="middle"
+                  dominant-baseline="middle"
+                  fill="white"
+                ></text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-bg"></div>
+    <div class="menu">
+      <img src="./Assets/menu-logo.png" alt="" />
+      <a href="personal.html" class="personal-cabinet">Личный кабинет</a>
+      <span onclick="showCart()" class="cart-link">Корзина</span>
+      <label class="switch">
+        <input type="checkbox" id="toggleSwitch" />
+        <span class="slider"></span>
+      </label>
+      <a href="more-details.html" class="details">О нас подробнее</a>
+    </div>
+    <div class="header">
+      <div class="container">
+        <div class="header-item">
+          <div class="head-image">
+            <img
+              src="./Assets/logo.png"
+              alt="Логотип Мастер Строй"
+              class="logo"
+            />
+          </div>
+          <div class="head-span">
+            <span class="about-company" onclick="location.href='#about'"
+              >О компании</span
+            >
+            <span class="sidewalk-laying">Укладка тротуарной плитки</span>
+            <span class="portfolio" onclick="location.href='#portfolio'"
+              >Портфолио</span
+            >
+            <span class="goodToNow" onclick="location.href='#polezno'"
+              >Полезно знать</span
+            >
+            <span class="delivery">Доставка и оплата</span>
+            <span class="contacts" id="login" onclick="openLoginModal()"
+              >Войти</span
+            >
+            <span class="for-logined hidden" onclick="showUserData()"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="container">
+        <div class="main-item">
+          <div class="main-h1">
+            <h1>
+              Тротуарная плитка в Волоколамске <br />
+              напрямую от производителя
+            </h1>
+          </div>
+          <div class="main-description">
+            <p>
+              Вам нужна качественная и недорогая тротуарная плитка в
+              Волоколамске? Мы готовы предложить <br />
+              отличную возможность приобрести современные модели с высокими
+              показателями эстетики и <br />
+              механической стойкости напрямую от производителя – компании
+              «Мастер Строй».
+            </p>
+          </div>
+          <div class="main-btn">
+            <button
+              onclick="document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' })"
+            >
+              Каталог
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="catalog" id="catalog">
+      <div class="container">
+        <h1 class="catalog-title">Каталог продукции</h1>
+        <div class="catalog-container">
+          <div class="catalog-card" onclick="goToPage('plites.html')">
+            <img src="./Assets/bricks/bricks.svg" alt="Прессованная плитка" />
+            <h3 class="card-info">Прессованная плитка</h3>
+          </div>
+          <div class="catalog-card">
+            <img src="./Assets/bricks/bricks2.svg" alt="Вибролитая плитка" />
+            <h3 class="card-info">Вибролитая плитка</h3>
+          </div>
+          <div class="catalog-card">
+            <img src="./Assets/bricks/bricks3.svg" alt="Садовый бордюр" />
+            <h3 class="card-info">Садовый бордюр</h3>
+          </div>
+          <div class="catalog-card" onclick="goToPage('border.html')">
+            <img src="./Assets/bricks/bricks4.svg" alt="Дорожный бордюр" />
+            <h3 class="card-info">Дорожный бордюр</h3>
+          </div>
+
+          <div class="catalog-card" onclick="goToPage('building-blocks.html')">
+            <img src="./Assets/bricks/bricks5.svg" alt="Строительные блоки" />
+            <h3 class="card-info">Строительные блоки</h3>
+          </div>
+          <div class="catalog-card" onclick="goToPage('facade.html')">
+            <img src="./Assets/bricks/bricks6.svg" alt="Фасадная плитка" />
+            <h3 class="card-info">Фасадная плитка</h3>
+          </div>
+          <div class="catalog-card" onclick="goToPage('gutter.html')">
+            <img src="./Assets/bricks/bricks7.svg" alt="Водостоки тротуарные" />
+            <h3 class="card-info">Водостоки тротуарные</h3>
+          </div>
+          <div class="catalog-card" onclick="goToPage('lid.html')">
+            <img src="./Assets/bricks/bricks8.svg" alt="Крышки на столбы" />
+            <h3 class="card-info">Крышки на столбы</h3>
+          </div>
+        </div>
+
+        <button class="catalog-btn" onclick="location.href='#moreProduct'">
+          Больше товаров
+        </button>
+      </div>
+    </div>
+    <div class="about" id="about">
+      <div class="container">
+        <div class="about-item">
+          <img class="about-image" src="./Assets/truck.svg" alt="" />
+          <div class="about-content">
+            <h1 class="about-title">О нас</h1>
+            <span class="about-info"
+              >«Мастер Строй» - надежная и недорогая тротуарная плитка в <br />
+              Волоколамском районе</span
+            >
+            <p class="about-description1">
+              Наша компания готова помочь вам и с первым и со вторым аспектом
+              данной задачи. В нашем каталоге вы <br />
+              сможете подобрать желаемый вариант материала и сразу заказать
+              профессиональную укладку на вашем <br />
+              участке. Вниманию покупателей всегда доступна качественная и
+              прочная тротуарная плитка от производителя <br />
+              по оптимальной стоимости.
+            </p>
+            <p class="about-description2">
+              Если вам нужна надежная тротуарная плитка, купить в Волоколамском
+              районе такой материал можно у нас, <br />
+              цена продукции из каталога вас приятно удивит и не ударит по
+              бюджету. Оформить заказ можно прямо на <br />
+              сайте. Если в процессе выбора вам понадобится консультация
+              специалиста, вы всегда можете заказать <br />
+              обратный звонок, используя специальную функцию на сайте, либо
+              самостоятельно позвонить менеджеру по <br />
+              указанным телефонам.
+            </p>
+            <p class="about-description3">
+              Теперь если вам нужна тротуарная плитка, вы знаете где ее можно
+              приобрести. «Мастер Строй» - компания- <br />
+              производитель, которая гарантирует достойный уровень качества по
+              приятной цене.
+            </p>
+            <span class="organization"> ООО «МАСТЕРСТРОЙ»</span>
+            <button class="about-btn">Приобрести</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="top" id="moreProduct">
+      <div class="container">
+        <h1 class="top-title">Топ товаров</h1>
+        <div class="top-container">
+          <div class="top-card">
+            <div class="card-content">
+              <img
+                class="card-img"
+                src="./Assets/top-cards/top-card1.svg"
+                alt=""
+              />
+              <div class="content-span">
+                <span class="card-title">Шестигранник 250x220x70</span>
+                <span class="card-size">Размер: 250x220x70мм</span>
+                <span class="card-count">Количество: 21 шт/кв.м</span>
+                <span class="card-color-count">Цвета в наличии: 8</span>
+              </div>
+
+              <div class="colors">
+                <img src="./Assets/brick-colors/block-gray.svg" alt="gray" />
+                <img src="./Assets/brick-colors/block-red.svg" alt="red" />
+                <img
+                  src="./Assets/brick-colors/block-yellow.svg"
+                  alt="yellow"
+                />
+                <img src="./Assets/brick-colors/block-brown.svg" alt="brown" />
+                <img src="./Assets/brick-colors/block-pink.svg" alt="pink" />
+                <img
+                  src="./Assets/brick-colors/block-darkgray.svg"
+                  alt="darkgray"
+                />
+                <img
+                  src="./Assets/brick-colors/block-golden.svg"
+                  alt="golden"
+                />
+                <img src="./Assets/brick-colors/block-black.svg" alt="black" />
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">470 руб кв/м</span>
+              <span class="color-title">Красный</span>
+              <span class="price-m2">530 руб кв/м</span>
+              <span class="color-title">Коричневый</span>
+              <span class="price-m2">590 руб кв/м</span>
+              <span class="color-title">Желтый</span>
+              <span class="price-m2">По запросу</span>
+              <span class="color-title">Другие цвета</span>
+              <span class="price-m2">510 руб кв/м</span>
+              <div
+                class="plus"
+                id="top-card1"
+                data-product-id="1"
+                data-category="sortiment"
+                onclick="addToCartFromTop(1,'sortiment')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="top-card">
+            <div class="card-content">
+              <img
+                class="card-img"
+                src="./Assets/top-cards/top-card2.svg"
+                alt=""
+              />
+              <div class="content-span">
+                <span class="card-title">Брусчатка 200x100x50</span>
+                <span class="card-size">Размер: 200x100x50мм</span>
+                <span class="card-count">Количество: 50 пара шт/кв.м</span>
+                <span class="card-color-count">Цвета в наличии: 8</span>
+              </div>
+
+              <div class="colors">
+                <img src="./Assets/brick-colors/block-gray.svg" alt="gray" />
+                <img src="./Assets/brick-colors/block-red.svg" alt="red" />
+                <img
+                  src="./Assets/brick-colors/block-yellow.svg"
+                  alt="yellow"
+                />
+                <img src="./Assets/brick-colors/block-brown.svg" alt="brown" />
+                <img src="./Assets/brick-colors/block-pink.svg" alt="pink" />
+                <img
+                  src="./Assets/brick-colors/block-darkgray.svg"
+                  alt="darkgray"
+                />
+                <img
+                  src="./Assets/brick-colors/block-golden.svg"
+                  alt="golden"
+                />
+                <img src="./Assets/brick-colors/block-black.svg" alt="black" />
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">440 руб кв/м</span>
+              <span class="color-title">Красный</span>
+              <span class="price-m2">500 руб кв/м</span>
+              <span class="color-title">Коричневый</span>
+              <span class="price-m2">550 руб кв/м</span>
+              <span class="color-title">Желтый</span>
+              <span class="price-m2">700 руб кв/м</span>
+              <span class="color-title">Другие цвета</span>
+              <span class="price-m2">По запросу</span>
+              <div
+                class="plus"
+                id="top-card2"
+                data-product-id="2"
+                data-category="sortiment"
+                onclick="addToCartFromTop(2,'sortiment')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="top-card">
+            <div class="card-content">
+              <img
+                class="card-img"
+                src="./Assets/top-cards/top-card3.svg"
+                alt=""
+              />
+              <div class="content-span">
+                <span class="card-title">Плитка квадрат 330x330x60</span>
+                <span class="card-size">Размер: 330x330x60мм</span>
+                <span class="card-count">Количество: 9 шт/кв.м</span>
+                <span class="card-color-count">Цвета в наличии: 8</span>
+              </div>
+
+              <div class="colors">
+                <img src="./Assets/brick-colors/block-gray.svg" alt="gray" />
+                <img src="./Assets/brick-colors/block-red.svg" alt="red" />
+                <img
+                  src="./Assets/brick-colors/block-yellow.svg"
+                  alt="yellow"
+                />
+                <img src="./Assets/brick-colors/block-brown.svg" alt="brown" />
+                <img src="./Assets/brick-colors/block-pink.svg" alt="pink" />
+                <img
+                  src="./Assets/brick-colors/block-darkgray.svg"
+                  alt="darkgray"
+                />
+                <img
+                  src="./Assets/brick-colors/block-golden.svg"
+                  alt="golden"
+                />
+                <img src="./Assets/brick-colors/block-black.svg" alt="black" />
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">440 руб кв/м</span>
+              <span class="color-title">Красный</span>
+              <span class="price-m2">500 руб кв/м</span>
+              <span class="color-title">Коричневый</span>
+              <span class="price-m2">550 руб кв/м</span>
+              <span class="color-title">Желтый</span>
+              <span class="price-m2">700 руб кв/м</span>
+              <span class="color-title">Другие цвета</span>
+              <span class="price-m2">По запросу</span>
+              <div
+                class="plus"
+                id="top-card3"
+                data-product-id="3"
+                data-category="sortiment"
+                onclick="addToCartFromTop(3,'sortiment')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="top-card">
+            <div class="card-content">
+              <img
+                class="card-img"
+                src="./Assets/top-cards/top-card4.svg"
+                alt=""
+              />
+              <div class="content-span">
+                <span class="card-title">Катушка 250x160x60</span>
+                <span class="card-size">Размер: 250x160x60мм</span>
+                <span class="card-count">Количество: 30 шт/кв.м</span>
+                <span class="card-color-count">Цвета в наличии: 8</span>
+              </div>
+
+              <div class="colors">
+                <img src="./Assets/brick-colors/block-gray.svg" alt="gray" />
+                <img src="./Assets/brick-colors/block-red.svg" alt="red" />
+                <img
+                  src="./Assets/brick-colors/block-yellow.svg"
+                  alt="yellow"
+                />
+                <img src="./Assets/brick-colors/block-brown.svg" alt="brown" />
+                <img src="./Assets/brick-colors/block-pink.svg" alt="pink" />
+                <img
+                  src="./Assets/brick-colors/block-darkgray.svg"
+                  alt="darkgray"
+                />
+                <img
+                  src="./Assets/brick-colors/block-golden.svg"
+                  alt="golden"
+                />
+                <img src="./Assets/brick-colors/block-black.svg" alt="black" />
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">440 руб кв/м</span>
+              <span class="color-title">Красный</span>
+              <span class="price-m2">500 руб кв/м</span>
+              <span class="color-title">Коричневый</span>
+              <span class="price-m2">550 руб кв/м</span>
+              <span class="color-title">Желтый</span>
+              <span class="price-m2">700 руб кв/м</span>
+              <span class="color-title">Другие цвета</span>
+              <span class="price-m2">По запросу</span>
+              <div
+                class="plus"
+                id="top-card4"
+                data-product-id="4"
+                data-category="sortiment"
+                onclick="addToCartFromTop(4,'sortiment')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="top-card">
+            <div class="card-content">
+              <img
+                class="card-img"
+                src="./Assets/top-cards/top-card5.svg"
+                alt=""
+              />
+              <div class="content-span">
+                <span class="card-title">Кирпичик 250x125x60</span>
+                <span class="card-size">Размер: 250x125x60мм</span>
+                <span class="card-count">Количество: 32 шт/кв.м</span>
+                <span class="card-color-count">Цвета в наличии: 8</span>
+              </div>
+
+              <div class="colors">
+                <img src="./Assets/brick-colors/block-gray.svg" alt="gray" />
+                <img src="./Assets/brick-colors/block-red.svg" alt="red" />
+                <img
+                  src="./Assets/brick-colors/block-yellow.svg"
+                  alt="yellow"
+                />
+                <img src="./Assets/brick-colors/block-brown.svg" alt="brown" />
+                <img src="./Assets/brick-colors/block-pink.svg" alt="pink" />
+                <img
+                  src="./Assets/brick-colors/block-darkgray.svg"
+                  alt="darkgray"
+                />
+                <img
+                  src="./Assets/brick-colors/block-golden.svg"
+                  alt="golden"
+                />
+                <img src="./Assets/brick-colors/block-black.svg" alt="black" />
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">440 руб кв/м</span>
+              <span class="color-title">Красный</span>
+              <span class="price-m2">500 руб кв/м</span>
+              <span class="color-title">Коричневый</span>
+              <span class="price-m2">550 руб кв/м</span>
+              <span class="color-title">Желтый</span>
+              <span class="price-m2">700 руб кв/м</span>
+              <span class="color-title">Другие цвета</span>
+              <span class="price-m2">По запросу</span>
+              <div
+                class="plus"
+                id="top-card5"
+                data-product-id="5"
+                data-category="sortiment"
+                onclick="addToCartFromTop(5,'sortiment')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="top-card">
+            <div class="card-content">
+              <img
+                class="card-img"
+                src="./Assets/top-cards/top-card6.svg"
+                alt=""
+              />
+              <div class="content-span">
+                <span class="card-title">Волна 250x125x60</span>
+                <span class="card-size">Размер: 250x125x60</span>
+                <span class="card-count">Количество: 32/40 шт/кв.м</span>
+                <span class="card-color-count">Цвета в наличии: 8</span>
+              </div>
+
+              <div class="colors">
+                <img src="./Assets/brick-colors/block-gray.svg" alt="gray" />
+                <img src="./Assets/brick-colors/block-red.svg" alt="red" />
+                <img
+                  src="./Assets/brick-colors/block-yellow.svg"
+                  alt="yellow"
+                />
+                <img src="./Assets/brick-colors/block-brown.svg" alt="brown" />
+                <img src="./Assets/brick-colors/block-pink.svg" alt="pink" />
+                <img
+                  src="./Assets/brick-colors/block-darkgray.svg"
+                  alt="darkgray"
+                />
+                <img
+                  src="./Assets/brick-colors/block-golden.svg"
+                  alt="golden"
+                />
+                <img src="./Assets/brick-colors/block-black.svg" alt="black" />
+              </div>
+            </div>
+            <div class="card-priceList">
+              <span class="color-title">Серый</span>
+              <span class="price-m2">450 руб кв/м</span>
+              <span class="color-title">Красный</span>
+              <span class="price-m2">500 руб кв/м</span>
+              <span class="color-title">Коричневый</span>
+              <span class="price-m2">550 руб кв/м</span>
+              <span class="color-title">Желтый</span>
+              <span class="price-m2">700 руб кв/м</span>
+              <span class="color-title">Другие цвета</span>
+              <span class="price-m2">По запросу</span>
+              <div
+                class="plus"
+                id="top-card6"
+                data-product-id="6"
+                data-category="sortiment"
+                onclick="addToCartFromTop(6,'sortiment')"
+              >
+                <img src="./Assets/top-cards/Vector 3.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="production" id="polezno">
+      <div class="container">
+        <div class="production-header">
+          <h1 class="production-title">О производстве</h1>
+        </div>
+        <div class="production-container">
+          <div class="production-info">
+            <div class="production-logo">
+              <img src="./Assets/logo.png" alt="" class="prod-logo"/>
+            </div>
+            <div class="production-truck">
+              <img src="./Assets/about/truck1.svg" alt="" />
+              <span
+                >Доставка и разгрузка плитки <br />
+                краном-манипулятором</span
+              >
+            </div>
+            <div class="production-wall">
+              <img src="./Assets/about/wall.svg" alt="" />
+              <span
+                >Множество видов тротуарной <br />
+                плитки различной формы и <br />
+                фактуры</span
+              >
+            </div>
+            <div class="production-award">
+              <img src="./Assets/about/just-award.svg" alt="" />
+              <span
+                >Весь товар сертифицирован! <br />
+                Официальная гарантия!</span
+              >
+            </div>
+          </div>
+          <div class="production-video">
+            <iframe
+              src="https://www.youtube.com/embed/naOPSLq8ktk"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="video"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="work" id="portfolio">
+      <div class="container">
+        <h1 class="work-title">Наши работы</h1>
+        <p class="work-description">
+          Отделка участка, сада, входной группы или любой другой частной
+          территории требует большого внимания со стороны владельца, поскольку
+          именно эти зоны являются «лицом», а значит и престижем вашего дома или
+          коммерческого объекта. Подбор прочного и эстетически презентабельного
+          материала для оформления входа, дорожек, пешеходных зон – это уже
+          половина успеха отделки. Вторая половина – это, безусловно, грамотная
+          укладка, обеспечивающая долговечность покрытия.
+        </p>
+        <div class="work-images-container">
+          <img src="Assets/works/work1.svg" alt="" />
+          <img src="Assets/works/work2.svg" alt="" />
+          <img src="Assets/works/work3.svg" alt="" />
+          <img src="Assets/works/work4.svg" alt="" />
+          <img src="Assets/works/work5.svg" alt="" />
+          <img src="Assets/works/work6.svg" alt="" />
+
+          <div class="last-row-wrapper">
+            <img src="Assets/works/work7.svg" alt="" />
+            <img src="Assets/works/work8.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="advantages">
+      <div class="container">
+        <h1 class="advantages-title">Наши преимущества</h1>
+        <div class="advantages-cardContainer">
+          <div class="advantagesCard">
+            <img
+              class="cardImg"
+              src="./Assets/advantages-assets/adventages1.svg"
+              alt=""
+            />
+            <span class="card-header"
+              >Тротуарная плитка от <br />
+              производителя в широком <br />
+              ассортименте</span
+            >
+            <p class="advantages-description">
+              На сайте вы сможете подобрать <br />
+              прессованную, вибролитую или <br />
+              фасадную плитку, блоки и бордюры, <br />
+              водостоки, крышки на столбы и <br />
+              многое другое.
+            </p>
+          </div>
+          <div class="advantagesCard">
+            <img
+              class="cardImg"
+              src="./Assets/advantages-assets/adventages2.svg"
+              alt=""
+            />
+            <span class="card-header"
+              >Высокий уровень сервиса <br />
+              обслуживания</span
+            >
+            <p class="advantages-description">
+              Наши менеджеры всегда вежливые <br />
+              и профессиональные в работе с <br />
+              клиентами, они готовы помочь с <br />
+              выбором нужной модели и ответить <br />
+              на все вопросы клиента.
+            </p>
+          </div>
+          <div class="advantagesCard">
+            <img
+              class="cardImg"
+              src="./Assets/advantages-assets/adventages3.svg"
+              alt=""
+            />
+            <span class="card-header"
+              >Услуги команды опытных <br />
+              специалистов по монтажу</span
+            >
+            <p class="advantages-description">
+              Наша компания предлагает услуги <br />
+              профессиональной укладки и другие <br />
+              работы по благоустройству частных <br />
+              территорий.
+            </p>
+          </div>
+          <div class="advantagesCard">
+            <img
+              class="cardImg"
+              src="./Assets/advantages-assets/adventages4.svg"
+              alt=""
+            />
+            <span class="card-header">Быстрая и удобная доставка</span>
+            <p class="advantages-description">
+              Развоз заказов осуществляется при <br />
+              помощи спецтехники – <br />
+              манипулятора, облегчающего <br />
+              процесс погрузки и разгрузки по <br />
+              Волоколамскому, Лотошинскому, Шаховскому району, Истре, Клину,
+              <br />
+              Рузе.
+            </p>
+          </div>
+          <div class="advantagesCard">
+            <img
+              class="cardImg"
+              src="./Assets/advantages-assets/adventages5.svg"
+              alt=""
+            />
+            <span class="card-header">Демократичная стоимость</span>
+            <p class="advantages-description">
+              Если вы хотите подобрать и купить <br />
+              тротуарную плитку по наиболее <br />
+              выгодной цене в регионе – вам <br />
+              однозначно в «Мастер Строй»! У нас <br />
+              всегда первая цена напрямую от <br />
+              производителя!
+            </p>
+          </div>
+          <div class="advantagesCard">
+            <img
+              class="cardImg"
+              src="./Assets/advantages-assets/adventages6.svg"
+              alt=""
+            />
+            <span class="card-header"
+              >Безупречный контроль качества <br />
+              продукции</span
+            >
+            <p class="advantages-description">
+              Все материалы соответствуют <br />
+              техническим нормам ГОСТа, а <br />
+              тщательный контроль позволяет <br />
+              исключить риск попадания брака в <br />
+              партию.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-magazine">
+            <span class="title1">Магазин</span>
+            <span class="personal">Персональный раздел</span>
+            <div class="footer-work-time">
+              <img src="./Assets/footer-clock.svg" alt="" class="work-clock" />
+              <span>Режим работы: с 8:00 до 20:00</span>
+            </div>
+            <div class="footer-phone">
+              <img src="./Assets/footer-phone.svg" alt="" />
+              <span
+                >+7 (926) 105-94-14 <br />
+                +7 (910) 470-67-97 <br />
+                +7 (499) 994-90-99</span
+              >
+            </div>
+          </div>
+          <div class="footer-catalog">
+            <ul class="footer-num">
+              <li class="footer-catalog-title">Каталог</li>
+              <li class="other-li">Акции</li>
+              <li class="other-li">Тротуарная плитка</li>
+              <li class="other-li">Бордюры</li>
+            </ul>
+          </div>
+          <div class="footer-services">
+            <ul>
+              <li class="service-title">Сервисы</li>
+              <li class="other-li">Дизайн-проект</li>
+              <li class="other-li">Укладка брусчатки</li>
+              <li class="other-li">Доставка</li>
+            </ul>
+          </div>
+          <div class="footer-company">
+            <ul>
+              <li class="company-title">О компании</li>
+              <li class="other-li">Контакты</li>
+              <li class="other-li">Завод BRAER</li>
+              <li class="other-li">Портфолио</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <span class="footer-copyright">© 2022 ООО "Мастер строй"</span>
+        </div>
+      </div>
+    </div>
+    <div class="deliveryOrder hidden">
+      <div class="deliveryOrder-container">
+        <span class="deliveryOrder-title">Заказать доставку</span>
+        <form id="delivery-form">
+          <div class="date-order">
+            <label for="delivery-date">Выберите дату доставки</label>
+            <input
+              type="date"
+              id="delivery-date"
+              class="order-time"
+              min=""
+              max=""
+            />
+            <span id="dateError"></span>
+          </div>
+          <div class="deliveryOrder-adress">
+            <span class="address-input">Укажите адрес доставки: </span>
+            <p class="map-help">Чтобы убрать метку адреса нажмите на метку</p>
+
+            <div class="map" id="map"></div>
+          </div>
+          <span id="addressError"></span>
+          <button type="submit" class="order-btn">Оформить доставку</button>
+        </form>
+      </div>
+    </div>
+    <div class="deliverySuccess-bg hidden">
+      <div class="deliverySuccess-container">
+        <img
+          src="./Assets/x.png"
+          alt=""
+          class="deliveryClose"
+          onclick="deliverySuccessClose()"
+        />
+        <h1 class="deliverySuccess-title">Доставка оформлена</h1>
+        <div class="hz">
+          <span id="deliveryNumber" class="deliveryNumber"
+            >Номер вашего заказа:</span
+          >
+          <span id="deliverySuccess-number" class="deliveryNum"></span>
+          <span class="deliverySuccess-costTitle">Цена доставки товаров:</span>
+          <span class="deliverySuccess-cost" id="deliverySuccess-cost"></span>
+          <span class="deliverySuccess-addressTitle"
+            >Доставка оформлена на адрес:</span
+          >
+          <span class="deliverySuccess-address" id="deliverySuccess-address">
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="login-bg hidden">
+      <div class="login-container">
+        <div class="login-box">
+          <img class="login-hide" src="Assets/x.png" alt="" />
+          <h2 class="login-title">Вход в Мастер Строй</h2>
+          <form id="login-form">
+            <label for="emailLogin">E-mail</label>
+            <input
+              type="email"
+              id="emailLogin"
+              placeholder="Введите e-mail"
+              required
+            />
+            <span id="logMailErr"></span>
+
+            <label for="passwordLogin">Пароль</label>
+            <input
+              type="password"
+              id="passwordLogin"
+              placeholder="Введите пароль"
+              class="password"
+              required
+            />
+            <span id="logPassErr"></span>
+            <img
+              src="./Assets/eyePass.png"
+              alt=""
+              class="eyePass"
+              onclick="openPass()"
+            />
+
+            <button type="submit" class="login-btn">Войти</button>
+          </form>
+          <p class="login-hint">
+            Нет аккаунта?
+            <span onclick="openRegisterModal()">Зарегистрироваться</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="register-bg hidden">
+      <div class="register-container">
+        <div class="register-box">
+          <img class="reg-hide" src="Assets/x.png" alt="" />
+          <h2 class="register-title">Регистрация в Мастер Строй</h2>
+          <form id="register-form">
+            <label for="regName">Имя</label>
+            <input
+              type="text"
+              id="regName"
+              placeholder="Введите свое имя"
+              required
+            />
+            <span id="regNameErr"></span>
+            <label for="emailRegister">E-mail</label>
+            <input
+              type="email"
+              id="emailRegister"
+              placeholder="Введите e-mail"
+              required
+            />
+
+            <span id="regMailErr"></span>
+            <label for="phone-number">Телефон</label>
+            <input
+              type="tel"
+              id="phone-number"
+              inputmode="numeric"
+              placeholder="Введите свой телефон"
+              required
+            />
+            <span id="regNumberErr"></span>
+
+            <label for="passwordRegister">Пароль</label>
+            <input
+              type="password"
+              id="passwordRegister"
+              placeholder="Введите пароль"
+              class="password"
+              required
+            />
+            <img
+              src="./Assets/eyePass.png"
+              alt="look-password"
+              class="regPassWatch"
+              onclick="openPassReg()"
+            />
+            <button type="submit" class="register-btn">
+              Зарегистрироваться
+            </button>
+          </form>
+          <p class="register-hint">
+            Есть аккаунт? <span onclick="fromRegToLogin()">Войти</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="phone-bg hidden" onclick="closeOrdercall()"></div>
+    <div class="phone-container hidden">
+      <div class="phone-order">
+        <img src="" class="phone-order-logo" alt="" />
+        <span class="phone-order-title">Заказать звонок</span>
+        <form id="call-order">
+          <label for="user-number" class="num">Номер</label>
+          <input
+            type="tel"
+            id="user-number"
+            placeholder="Введите свой Номер"
+            class="phone-input"
+            name="phoneOrder-input"
+            required
+          />
+          <label for="call-day" class="data">Дата</label>
+          <input type="date" id="call-day" class="phone-date" required />
+          <button type="submit" class="phone-button">Заказать звонок</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="cart hidden">
+      <div class="cart-header">
+        <img
+          src="./Assets/white-x.png"
+          class="cart-x"
+          onclick="getOffCart()"
+          alt=""
+        />
+        <span id="cartOrderErr"></span>
+        <button class="cartOrderBtn" onclick="orderModalOpen()">
+          Заказать товары
+        </button>
+      </div>
+
+      <div class="cart-box"></div>
+    </div>
+
+    <div class="account-bg hidden">
+      <div class="account-box">
+        <img src="./Assets/x.png" alt="" class="account-x" />
+        <img src="./Assets/photo.png" alt="" class="account-photo" />
+        <span class="account-title" id="account-name"></span>
+        <div class="account-content">
+          <span class="account-mail" id="account-mail"></span>
+          <span class="account-number" id="account-number"></span>
+          <a class="cabinet" id="pc" href="personal.html">Личный кабинет</a>
+          <span class="logOut" onclick="showLogOut()">Выйти из аккаунта</span>
+          <span class="deleteAccount" onclick="deleteAccount()"
+            >Удалить аккаунт</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="areYouSure-bg hidden">
+      <div class="areYouSure">
+        <h1 class="are-title">Вы уверенны что хотите выйти из аккаунта?</h1>
+        <div class="are-buttons">
+          <button id="get-out" onclick="logOut()">Выйти</button>
+          <button id="nope" onclick="nope()">Отмена</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

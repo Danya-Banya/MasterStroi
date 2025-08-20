@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Личный кабинет - Мастер Строй</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./Assets/icon-site.png" />
+  </head>
+  <body class="personal-body">
+    <div class="all-header">
+      <div class="container">
+        <div class="allHeader-container">
+          <div class="user-profile">
+            <img src="./Assets/photo.png" alt="" /><span id="userName"></span>
+          </div>
+          <a class="comeback" href="main.html">Вернутся на основную страницу</a>
+        </div>
+      </div>
+    </div>
+    <div class="personal-main">
+      <div class="container">
+        <div class="personal-container">
+          <div class="personal-header">
+            <img src="./Assets/photo.png" alt="" class="personal-avatar" />
+            <div class="personalHeader-info">
+              <h1 class="personal-name" id="personal-headerName"></h1>
+              <span id="user-mail" class="persMail"></span>
+              <span id="user-phone" class="persNum"></span>
+              <span id="user-history" onclick="showOrderHistory()"
+                >История заказов</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="history hidden">
+      <div class="history-container">
+        <div class="history-header">
+          <span class="history-title">История заказов</span>
+          <img
+            src="./Assets/white-x.png"
+            class="personal-x"
+            alt="exit"
+            onclick="closeOrderHistory()"
+          />
+        </div>
+
+        <div class="historyOrder-container">
+        </div>          
+        </div>
+      </div>
+        <div class="historyProduct hidden">
+          <div class="historyProduct-container">
+            <img src="./Assets/white-x.png" alt="" class="historyProduct-x" onclick="closeProductHistory()">
+          <h1 style="color: #fff;">Заказ <span style="color: #0074f1;" id="orderTitle"></span></h1>
+            <span class="historyProduct-dateTitle">Дата заказа:</span>
+            <span id="historyProduct-date"></span>
+            <h3 class="historyProducts-title">Товары:</h3>
+            <div class="historyProducts-container">
+              <div class="historyProduct-card">
+                <img src="" alt="">
+                <span>Брусчатка 200x100x50</span>
+                <span>Количество:<span id="productCard-count">8</span></span>
+              </div>
+              <div class="historyProduct-card">
+                <img src="./Assets/top-cards/top-card2.svg" alt="">
+                <span>Брусчатка 200x100x50</span>
+              </div>
+            </div>
+            <span id="historyProduct-costTitle"></span>
+          </div>
+        </div>
+    </div>
+    <script src="./personal.js"></script>
+  </body>
+</html>

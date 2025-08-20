@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>С днем рождения Никита Тайке</title>
+    <link rel="icon" type="image/png" href="party-popper_3831665.png" />
+  </head>
+  <body>
+    <div class="hb">
+      <audio
+        src="./World of Tanks Blitz 4.10 - Victory_(Sens-Audio.ru).mp3"
+        id="5"
+      ></audio>
+      <h1 class="happy_birthday">С днем рождения!</h1>
+      <h3 class="pzh">
+        Желаю вам всего лучшего, чтобы у вас всегда были верные друзья, крепкое
+        здоровье, и успех в делах и работе!
+      </h3>
+      <h3 class="pzh2">
+        Желаю вам чтобы всегда рядом с вами были только самые лучшие и достойные
+        вас люди!
+      </h3>
+      <div class="buttons">
+        <button class="tank">Нажмите чтобы танк приехал</button>
+        <button class="pzh3Btn">Огонь! 💥</button>
+      </div>
+    </div>
+    <img class="salute1" src="HTjD9.gif" alt="" />
+    <img class="salute2" src="HTjD9.gif" alt="" />
+    <div class="tiger-1">
+      <img class="" id="dd" src="./22283863_1179-removebg-preview.png" alt="" />
+    </div>
+    <div class="audios">
+      <audio
+        id="1"
+        src="./World of Tanks Blitz 4.10 - Victory_(Sens-Audio.ru).mp3"
+      ></audio>
+      <audio
+        id="2"
+        src="./Звук Гусеницы от танка во время движения.mp3"
+      ></audio>
+      <audio src="./Звук big_in.mp3" id="3"></audio>
+    </div>
+
+    <div class="fire">
+      <img
+        id="4"
+        class="fireImage"
+        src="./ei_1744349888006-removebg-preview.png"
+        alt=""
+      />
+    </div>
+    <style>
+      body {
+        height: 1px;
+        background-color: rgb(24, 40, 57);
+      }
+      .pzh3Btn {
+        width: 200px;
+        margin-left: 100px;
+        height: 30px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: orangered;
+        border: 2px black solid;
+        border-radius: 5%;
+        transition: 1s;
+        z-index: 2;
+        position: absolute;
+        cursor: pointer;
+      }
+      .pzh3Btn:hover {
+        transition: 1s;
+        color: white;
+      }
+
+      .fireImage {
+        position: absolute;
+        top: 105px;
+        right: 177px;
+        width: 768px;
+        z-index: 3;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+      }
+
+      .buttons {
+        display: grid;
+      }
+
+      .tank {
+        width: 200px;
+        margin-left: 100px;
+        height: 30px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: orangered;
+        border: 2px black solid;
+        border-radius: 5%;
+        transition: 1s;
+        z-index: 2;
+        top: 300px;
+        position: absolute;
+        cursor: pointer;
+      }
+      .hb {
+        background-color: chartreuse;
+        margin: 410px;
+        margin-top: 0px;
+        padding: 30px;
+        border-radius: 4%;
+        position: relative;
+        height: 300px;
+      }
+
+      .salute1 {
+        z-index: 1;
+        position: absolute;
+        top: 200px;
+      }
+      .salute2 {
+        z-index: 1;
+        position: absolute;
+        top: 300px;
+        right: 100px;
+      }
+
+      .tiger-1 img {
+        position: absolute;
+        top: 300px;
+        right: -900px;
+      }
+
+      .tiger-1 {
+        position: relative;
+        top: -800px;
+      }
+
+      .tank-drive {
+        animation: tankMove 10s ease-in-out forwards;
+      }
+
+      @keyframes tankMove {
+        0% {
+          top: 300px;
+          left: 1300px;
+        }
+        100% {
+          top: 300px;
+          left: 610px;
+        }
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translate(0px, 0px);
+        }
+        20% {
+          transform: translate(-5px, 5px);
+        }
+        40% {
+          transform: translate(5px, -5px);
+        }
+        60% {
+          transform: translate(-5px, 5px);
+        }
+        80% {
+          transform: translate(5px, -5px);
+        }
+        100% {
+          transform: translate(0px, 0px);
+        }
+      }
+
+      .shake {
+        animation: shake 0.3s;
+      }
+
+      .happy_birthday {
+        color: rgb(63, 63, 188);
+        text-align: center;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .pzh {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .pzh2 {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      .fire img {
+        position: absolute;
+        z-index: 3;
+      }
+    </style>
+    <script>
+      document.addEventListener("click",()=>{
+        let sound = document.getElementById("1")
+        sound.play()
+      })
+
+      document.addEventListener("DOMContentLoaded", () => {
+        let sound = document.getElementById("1")
+        sound.play();
+      });
+
+      document.querySelector(".pzh3Btn").style.display = "none";
+
+      let fire = document.querySelector(".fire");
+      fire.style.display = "block";
+
+      document.querySelector(".tank").addEventListener("click", () => {
+        document.querySelector(".pzh3Btn").style.display = "block";
+        document.querySelector(".tank").style.display = "none";
+
+        let tank = document.getElementById("dd");
+        tank.classList.remove("tank-drive");
+        void tank.offsetWidth;
+        tank.classList.add("tank-drive");
+
+        let engine = document.getElementById("2");
+        engine.currentTime = 0;
+        engine.play();
+        setTimeout(() => {
+          engine.pause();
+          engine.currentTime = 0;
+        }, 10000);
+      });
+
+      document.querySelector(".pzh3Btn").addEventListener("click", () => {
+        let fireImg = document.querySelector(".fireImage");
+        let soundGun = document.getElementById("3");
+
+        fireImg.style.opacity = "0";
+
+        setTimeout(() => {
+          fireImg.style.opacity = "1";
+        }, 10);
+
+        setTimeout(() => {
+          fireImg.style.opacity = "0";
+        }, 500);
+
+        fireImg.style.position = "absolute";
+        fireImg.style.top = "105px";
+        fireImg.style.right = "177px";
+        fireImg.style.width = "768px";
+
+        soundGun.currentTime = 0;
+        soundGun.play();
+
+        document.body.classList.add("shake");
+        setTimeout(() => {
+          document.body.classList.remove("shake");
+        }, 300);
+      });
+    </script>
+  </body>
+</html>

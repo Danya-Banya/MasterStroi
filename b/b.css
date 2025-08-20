@@ -1,0 +1,73 @@
+body {
+  background-color: rgb(57, 57, 57);
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.choose {
+  display: grid;
+  margin-left: 450px;
+}
+
+button {
+  background-color: rgb(44, 209, 44);
+  width: 200px;
+  margin-top: 10px;
+  color: white;
+  height: 30px;
+  border: 2px black solid;
+  border-radius: 5px;
+  margin-left: 490px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-left: 390px;
+  display: grid;
+}
+
+.form-group-reg {
+  margin-left: 390px;
+  display: grid;
+}
+
+input {
+  width: 400px;
+  text-align: center;
+  height: 20px;
+  margin-top: 10px;
+}
+span {
+  margin-top: 10px;
+}
+
+.log {
+  margin-left: 545px;
+}
+
+.reg {
+  margin-left: 545px;
+}
+
+.haveNoAccount {
+  top: 20px;
+  display: grid;
+  margin-left: 430px;
+  cursor: pointer;
+}
+
+.haveAccount {
+  top: 20px;
+  display: grid;
+  margin-left: 430px;
+  cursor: pointer;
+}

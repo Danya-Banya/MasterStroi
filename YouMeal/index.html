@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YourMeal - самые сочные бургеры</title>
+    <link rel="icon" href="./Assets/IMG_20250510_122032.png" sizes="128x128" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <!-- <div class="modal">
+      <div class="container">
+      <div class="modal-item hidden">
+        <div class="modal-item-left">
+          <div class="modal-item-left-title">
+            <h1 id="modal-title">Мясная бомба</h1>
+          </div>
+          <div class="modal-item-left-img">
+            <img src="./burger/burger1.jpg" alt="">
+          </div>
+          <div class="modal-item-left-btn">
+
+          </div>
+        </div>
+        <div class="modal-item-right">
+          <div class="modal-item-right-discr">
+            <span id="productDescription"></span>
+          </div>
+          <div class="modal-item-right-ingridients">
+            <span>Состав:</span>
+            <ul id="ingridients-container">
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div> -->
+
+    <div class="main">
+      <div class="main-bg"></div>
+      <div class="container">
+        <div class="main-item">
+          <div class="main-item-header">
+            <h1>YourMeal</h1>
+            <img
+              src="./Assets/free-icon-kitchen-utensil-4790616 1.svg"
+              alt=""
+            />
+          </div>
+          <div class="main-item-content">
+            <div class="main-item-content-img">
+              <img class="main-img" src="./Assets/pic.svg" alt="" />
+            </div>
+            <div class="main-item-content-text">
+              <h1>Только самые <span>сочные бургеры</span></h1>
+              <p class="main-item-content-text-p">
+                Бесплатная доставка от 599₽
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="choose">
+      <div class="container">
+        <div class="choose-item">
+          <div class="choose-item-category">
+            <button
+              class="choose-item-category-btn"
+              data-cat="burger"
+              onclick="changeCategory('burger')"
+            >
+              <img src="./Assets/Бургеры.svg" alt="" /> Бургеры
+            </button>
+          </div>
+          <div class="choose-item-category">
+            <button
+              class="choose-item-category-btn"
+              data-cat="snack"
+              onclick="changeCategory('snack')"
+            >
+              <img src="./Assets/free-icon-onion-2362361.svg" alt="" /> Закуски
+            </button>
+          </div>
+          <div class="choose-item-category">
+            <button
+              class="choose-item-category-btn"
+              data-cat="hotdog"
+              onclick="changeCategory('hotdog')"
+            >
+              <img
+                src="./Assets/free-icon-hotdog-sandwich-2362313.svg"
+                alt=""
+              />
+              Хот-Доги
+            </button>
+          </div>
+          <div class="choose-item-category">
+            <button
+              class="choose-item-category-btn"
+              data-cat="combos"
+              onclick="changeCategory('combos')"
+            >
+              <img src="./Assets/Комбо.svg" alt="" /> Комбо
+            </button>
+          </div>
+          <div class="choose-item-category">
+            <button
+              class="choose-item-category-btn"
+              data-cat="shawerma"
+              onclick="changeCategory('shawerma')"
+            >
+              <img src="./Assets/Шаурма.svg" alt="" /> Шаурма
+            </button>
+          </div>
+          <div class="choose-item-category">
+            <button
+              class="choose-item-category-btn"
+              data-cat="pizzas"
+              onclick="changeCategory('pizza')"
+            >
+              <img src="./Assets/free-icon-pizza-2362372.svg" alt="" /> Пицца
+            </button>
+          </div>
+          <div class="choose-item-category">
+            <button
+              class="choose-item-category-btn"
+              data-cat="wok"
+              onclick="changeCategory('wok')"
+            >
+              <img src="./Assets/free-icon-noodles-2362350.svg" alt="" /> Вок
+            </button>
+          </div>
+          <div class="choose-item-category">
+            <button
+              class="choose-item-category-btn"
+              data-cat="desert"
+              onclick="changeCategory('desert')"
+            >
+              <img src="./Assets/Десерты.svg" alt="" /> Десерты
+            </button>
+          </div>
+          <div class="choose-item-category">
+            <button
+              class="choose-item-category-btn"
+              data-cat="sauces"
+              onclick="changeCategory('sauces')"
+            >
+              <img src="./Assets/Соусы.svg" alt="" /> Соусы
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="basic">
+      <div class="container">
+        <div class="basic-item">
+          <div class="basic-item-basket">
+            <div class="basic-item-basket-header">
+              <h3 id="adaptiveCart">Корзина</h3>
+              <div class="count">0</div>
+            </div>
+            <div class="basic-item-basket-order" id="basketContainer"></div>
+            <div class="basic-item-basket-total">
+              <h3>Итого</h3>
+              <h3 id="total">0₽</h3>
+            </div>
+            <div class="basic-item-basket-button">
+              <button id="order-btn" type="button" onclick="finalOrder(event)">
+                Оформить заказ
+              </button>
+            </div>
+            <div class="basic-item-basket-description">
+              <img src="./Assets/Доставка.svg" alt="" />
+              <p>Бесплатная доставка</p>
+            </div>
+          </div>
+          <div class="basic-item-menu">
+            <div class="category-title burger">
+              <h1>Бургеры</h1>
+            </div>
+            <div
+              class="basic-item-menu-choice category-container"
+              id="burgerContainer"
+            ></div>
+            <div class="category-title snack">
+              <h1>Закуски</h1>
+            </div>
+            <div
+              class="basic-item-menu-choice category-container"
+              id="snacksContainer"
+            ></div>
+            <div class="category-title hotdog">
+              <h1>Хот-Доги</h1>
+            </div>
+            <div
+              class="basic-item-menu-choice category-container"
+              id="hotdogsContainer"
+            ></div>
+            <div class="category-title combos">
+              <h1>Комбо</h1>
+            </div>
+            <div
+              class="basic-item-menu-choice category-container"
+              id="comboContainer"
+            ></div>
+            <div class="category-title shawerma">
+              <h1>Шаурма</h1>
+            </div>
+            <div
+              class="basic-item-menu-choice category-container"
+              id="shawermaContainer"
+            ></div>
+            <div class="category-title pizzas">
+              <h1>Пиццы</h1>
+            </div>
+            <div
+              class="basic-item-menu-choice category-container"
+              id="pizzaContainer"
+            ></div>
+
+            <div class="category-title wok">
+              <h1>Воки</h1>
+            </div>
+            <div
+              class="basic-item-menu-choice category-container"
+              id="wokContainer"
+            ></div>
+            <div class="category-title desert">
+              <h1>Десерты</h1>
+            </div>
+            <div
+              class="basic-item-menu-choice category-container"
+              id="desertsContainer"
+            ></div>
+            <div class="category-title sauces">
+              <h1>Соусы</h1>
+            </div>
+            <div
+              class="basic-item-menu-choice category-container"
+              id="saucesContainer"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-item">
+          <div class="footer-item-td">
+            <div class="footer-item-logo">
+              <h1>YourMeal</h1>
+              <img
+                src="./Assets/utensil-clear.png"
+                alt=""
+                class="footer-logo"
+              />
+            </div>
+            <div class="copyright">
+              <span>© YourMeal, 2025</span>
+              <span>Design: Dzhunushov Daniyar</span>
+            </div>
+          </div>
+
+          <div class="footer-item-number" style="position: relative">
+            <span>Номер для заказа</span>
+            <div class="number">
+              <img src="Assets/Call.svg" alt="" />
+              <p onclick="copyNumber()" id="num">+7(930)833-38-11</p>
+            </div>
+            <div class="footer-modal hidden" id="nn">
+              <span class="alert"
+                >Номер телефона скопирован в буфер обмена.</span
+              >
+            </div>
+          </div>
+          <div class="footer-item-social">
+            <span>Мы в соцсетях</span>
+            <div class="footer-item-social-images">
+              <img src="./Assets/entypo-social_vk-with-circle.svg" alt="" />
+              <img src="./Assets/bi_telegram.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="deliveryOverlay hidden"></div>
+    <div class="delivery hidden">
+      <div class="delivery-item">
+        <div class="delivery-item-image">
+          <img src="./Assets/pic (1).svg" alt="" />
+        </div>
+        <div class="delivery-item-content">
+          <div class="delivery-item-close">
+            <img src="./Assets/close.svg" alt="" onclick="closeModal()" />
+          </div>
+          <div class="delivery-item-title">
+            <h2>Доставка</h2>
+          </div>
+          <div class="delivery-item-inputs">
+            <form id="deliverySubmit" class="inputs">
+              <div class="form-group">
+                <label for="name"></label>
+                <input type="text" placeholder="Ваше имя" id="deliveryName" />
+                <span
+                  id="errorName"
+                  class="errMassage"
+                  style="display: none"
+                ></span>
+              </div>
+              <div class="form-group">
+                <label for="phone number"></label>
+                <input
+                  type="number"
+                  id="deliveryNumber"
+                  placeholder="Введите свой номер телефона"
+                />
+                <span
+                  id="errNumber"
+                  class="errMassage"
+                  style="display: none"
+                ></span>
+              </div>
+              <div class="form-group-radio">
+                <label for="deliveryChoose" class="forDisplay">
+                  <input
+                    type="radio"
+                    name="deliveryOption"
+                    value="delivery"
+                    onchange="deliveryInputs()"
+                  />
+                  <span class="deliveryVariant">Доставка</span>
+                </label>
+                <label for="deliveryChoose" class="forDisplay">
+                  <input
+                    type="radio"
+                    name="deliveryOption"
+                    value="pickup"
+                    id="pick"
+                    onchange="deliveryInputs()"
+                  />
+                  <span class="deliveryVariant">Самовывоз</span>
+                </label>
+              </div>
+              <div class="form-group-adress hidden" id="adressInputs">
+                <input
+                  type="text"
+                  id="street"
+                  placeholder="Улица, дом, квартира"
+                  class="adress-input"
+                />
+                <div class="home">
+                  <input type="number" placeholder="Этаж" />
+                  <input type="number" placeholder="Домофон" />
+                </div>
+              </div>
+              <div class="form-group-submit">
+                <button id="submit-order" type="submit" class="final-submit">
+                  Оформить
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="basic-modal">
+      <div class="basic-modal-img">
+        <img src="./Assets/pic (1).svg" alt="" />
+      </div>
+      <div class="basic-modal-content">
+        <div class="xFor912"></div>
+        <h1 class="basic-modal-title">Спасибо за заказ!</h1>
+        <span class="modal-number"> Ваш номер заказа: 1488</span>
+        <span class="modal-manager">Наш менеджер скоро свяжется с вами.</span>
+        <span class="modal-list-header">Ваш заказ:</span>
+        <ul class="modal-list" id="list"></ul>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

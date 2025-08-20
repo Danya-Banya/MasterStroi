@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🏎🏎🏎</title>
+    <link rel="stylesheet" href="./b.css" />
+  </head>
+  <body>
+    <div class="container">
+        <h1 class="log">Вход</h1>
+        <h1 class="reg">Регистрация</h1>
+      <form id="login" onsubmit="">
+        <div class="form-group">
+          <label for="email" id="1">Email пользователя</label>
+          <input type="email" id="email" placeholder="Введите Почту аккаунта" />
+          <span id="errorEmail" class="error-massage"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="userpPassword" id="1">Пароль Уч. Записи</label>
+          <input type="password" id="userPassword" placeholder="Введите пароль  аккаунта" />
+          <span id="errorPass" class="error-massage"></span>
+        </div>
+        
+        <button type="submit" onclick="login()">Войти</button>
+        <span class="haveNoAccount" id="haveNoAccount">Все еще нет аккаунта? Зарегестрируйтесь!</span>
+      </form>
+      
+      <form id="register" onsubmit="return register(event)">
+        <div class="form-group">
+          <label for="regUsername" id="1" >Имя пользователя</label>
+          <input type="text" id="regUsernameInput" placeholder="Введите имя">
+          <span id="errorUsername" class="error-massage"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="regEmail" id="2">Email</label>
+          <input type="email" id="regEmail" placeholder="Введите email" />
+          <span id="errorRegEmail" class="error-massage"></span>
+        </div>
+      
+        <div class="form-group">
+          <label for="regPassword" id="3">Пароль</label>
+          <input type="password" id="regPassword" placeholder="Введите пароль" />
+          <span id="errorRegPass" class="error-massage"></span>
+        </div>
+      
+        <button type="submit">Зарегистрироваться</button>
+        <span class="haveAccount" id="haveAccount">Уже есть аккаунт? Войти</span>
+      </form>
+    </div>
+    <script src="./b.js"></script>
+    </html>
+  </body>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin 👨‍💻</title>
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="icon" href="./adminAssets/white-collar-147cedd931a863fcb3a0b68ea0848a79.png">
+</head>
+<body>
+    <div class="admin">
+        <div class="container">
+            <div class="admin-item">
+                <div class="admin-item-bar">
+                    <div class="admin-logo">
+                        <h1>Logo</h1>
+                    </div>
+                    <div class="admin-item-choose">
+                        <ul>
+                            <li>Users</li>
+                            <li>Category</li>
+                            <li>Foods</li>
+                        </ul>
+                    </div>
+                    <div class="admin-item-getout">
+                        <button id="logOut">Выход</button>
+                    </div>
+                </div>
+                <div class="admin-item-table">
+                    <table id="usersTable">
+                        <tr class="d">
+                            <th class="nameHeader">Name</th>
+                            <th class="surnameHeader">Surname</th>
+                            <th class="emailHeader">Email</th>
+                            <th class="passworHeader">Password</th>
+                            <th class="watchPass"><img src="./adminAssets/noroot.png" alt=""></th>
+                            <th class="actionHeader">Action</th>
+                        </tr>
+                    </table>
+            <h1 class="createuser" id="cUser" onclick="createUser()">Create User</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-bg hidden">
+
+    </div>
+    <div class="modal-update hidden">
+        <div class="modal-header">
+            <h1>Update</h1>
+        </div>
+        <div class="modal-inputs">
+            <form class="">
+            <label for="newName">
+                <input type="text" id="newName" placeholder="Введите новое имя">
+            </label>
+            <label for="newSurname">
+                <input type="text" id="newSurname" placeholder="Введите новое фамилие">
+            </label>
+            <label for="newEmail">
+                <input type="email" id="newEmail" placeholder="Введите новую эл. почту">
+            </label>
+            <label for="newPassword">
+                <input type="password" id="newPassword" placeholder="Введите новый пароль">
+            </label>
+        </div>
+        <div class="modal-confirm">
+            <button class="confirm" onclick="updateUser()">Обновить</button>
+        </div>
+    </form>
+    </div>
+    <div class="modal-delete hidden">
+        <div class="modal-title">
+            <h1>Удалить пользователя?</h1>
+        </div>
+        <div class="modal-description">
+            <p>Вы удаляете пользователя, данные аккаунта удаляемого не получится вернуть! <br> Вы уверенны?</p>
+        </div>
+        <div class="modal-btns">
+            <button class="sure" onclick="deleteUser()">Да</button>
+            <button class="notSure" onclick="displayBlockDeleteModal(index)">Нет</button>
+        </div>
+    </div> 
+    <div class="modal-create hidden">
+        <div class="modal-header">
+            <h1>Create</h1>
+        </div>
+        <div class="modal-inputs">
+            <form class="">
+            <label for="name">
+                <input type="text" id="name" placeholder="Введите новое имя">
+            </label>
+            <label for="surname">
+                <input type="text" id="surname" placeholder="Введите новое фамилие">
+            </label>
+            <label for="email">
+                <input type="email" id="email" placeholder="Введите новую эл. почту">
+            </label>
+            <label for="password">
+                <input type="password" id="password" placeholder="Введите новый пароль">
+            </label>
+        </div>
+        <div class="modal-confirm">
+            <button class="confirm" onclick="updateUser()">Обновить</button>
+        </div>
+    <script src="./admin.js" defer></script>
+</body>
+</html>

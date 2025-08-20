@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Личный кабинет - Мастер Строй</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./Assets/icon-site.png" />
+  </head>
+  <body class="personal-body">
+    <div class="all-header">
+      <div class="container">
+        <div class="allHeader-container">
+          <div class="user-profile">
+            <img src="./Assets/photo.png" alt="" /><span id="userName"></span>
+          </div>
+          <a class="comeback" href="main.html">Вернутся на основную страницу</a>
+        </div>
+      </div>
+    </div>
+    <div class="personal-main">
+      <div class="container">
+        <div class="personal-container">
+          <div class="personal-header">
+            <img src="./Assets/photo.png" alt="" class="personal-avatar" />
+            <div class="personalHeader-info">
+              <h1 class="personal-name" id="personal-headerName"></h1>
+              <span id="user-mail" class="persMail"></span>
+              <span id="user-phone" class="persNum"></span>
+              <span id="user-history" onclick="showOrderHistory()"
+                >История заказов</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="history hidden">
+      <div class="history-container">
+        <div class="history-header">
+          <span class="history-title">История заказов</span>
+          <img
+            src="./Assets/white-x.png"
+            class="personal-x"
+            alt="exit"
+            onclick="closeOrderHistory()"
+          />
+        </div>
+
+        <div class="historyOrder-container">
+          <div class="orderItem">
+            <div class="orderItem-left">
+              <img src="./Assets/time-icon.png" alt="" />
+              <span id="order-date">2024-06-16</span>
+            </div>
+            <div class="orderItem-right">
+              <span id="order-cost">10000₽</span>
+            </div>
+          </div>
+        </div>          
+        </div>
+      </div>
+        <div class="historyProduct">
+          <h1>Заказ №</h1>
+        </div>
+    </div>
+    <script src="./personal.js"></script>
+  </body>
+</html>

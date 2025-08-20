@@ -1,0 +1,46 @@
+.container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body{
+    background-color: darkslategrey;
+}
+.selector{
+    width: 180px;
+    text-align: center;
+    height: 30px;
+    background-color: #444444;
+}
+
+.places-item-table td {
+    background-color: green;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.places-item-table{
+    background-color: #444444;
+    gap: 20px;
+    width: 256px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.vip{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: gold;
+}
+
+.place.selected {
+    background: red;
+    color: white;
+}
+
+.place{
+    background: green;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
