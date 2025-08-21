@@ -1528,7 +1528,74 @@ form input:focus {
 #incorrectPassword {
   color: #ec1400;
 }
-
+.areYouSureToDelete-bg{
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  background: blur(4px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  padding-top: 50px;
+  
+}
+.areYouSureToDelete-container{
+  width: 650px;
+  height: 500px;
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  position: relative;
+  padding: 30px;
+  box-sizing: border-box;
+  justify-items: center;
+  display: grid;
+}
+.closeAreYouSureToDelete{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.areYouSureToDelete-title{
+  color: rgb(188, 0, 0);
+  text-align: center;
+}
+.confirmation{
+  color: #fff;
+  text-align: center;
+}
+.toRed{
+  color: rgb(188, 0, 0);
+}
+.chooseTheButton{
+  display: flex;
+  gap: 30px;
+}
+.deleteAccountForever{
+  background-color: rgb(188, 0, 0);
+  color: #fff;
+  width: 200px;
+  height: 40px;
+  border: none;
+  font-family: "Meine Schrift";
+  cursor: pointer;
+}
+.deleteAccountForever:hover{
+  background-color: rgb(144, 0, 0);
+}
+.dontDeleteAccount{
+  background-color: #fff;
+  height: 40px;
+  width: 200px;
+  border: none;
+  font-family: "Meine Schrift";
+  cursor: pointer;
+}
+.dontDeleteAccount:hover{
+  background-color: #d9d9d9;
+}
 /* main.html */
 
 /* for all html */
@@ -2308,7 +2375,7 @@ form input:focus {
     max-width: 350px;
     height: 500px;
   }
-  .changePass-form input{
+  .changePass-form input {
     box-sizing: border-box;
   }
   /*       for all header        */
@@ -3052,7 +3119,7 @@ form input:focus {
     width: 85%;
     height: 75%;
   }
-  .order-time{
+  .order-time {
     width: 100%;
     height: 35px;
   }
@@ -3542,7 +3609,6 @@ form input:focus {
   }
   .main {
     width: 100%;
-    max-width: 1024px;
     margin: 0;
   }
   .catalog {
@@ -3757,7 +3823,6 @@ form input:focus {
   }
   .footer {
     width: 100%;
-    max-width: 1024px;
   }
   .footer-magazine {
     justify-items: start;
@@ -3861,7 +3926,6 @@ form input:focus {
   }
   .deliveryOrder {
     width: 100%;
-    max-width: 1024px;
     height: 50vh;
     display: flex;
     justify-content: center;
@@ -3877,6 +3941,9 @@ form input:focus {
     margin: 0;
     height: 75%;
   }
+  .deliveryOrder-adress {
+    justify-items: center;
+  }
   .deliverySuccess-bg {
     display: flex;
     justify-content: center;
@@ -3884,6 +3951,7 @@ form input:focus {
     padding: 0;
     width: 100vw;
     max-height: 600px;
+    box-sizing: border-box;
   }
   .deliverySuccess-container {
     margin: 0;
@@ -3891,15 +3959,15 @@ form input:focus {
     overflow-y: hidden;
   }
   #map {
-    height: 600px;
-    width: 600px;
+    height: 400px;
+    width: 400px;
   }
   .date-order {
     justify-items: center;
   }
   .order-time {
-    width: 50%;
-    height: 50px;
+    width: 100%;
+    height: 35px;
   }
   .deliveryOrder-title {
     font-size: 1.5rem;
@@ -4031,7 +4099,6 @@ form input:focus {
   }
   .all-header {
     width: 100%;
-    max-width: 1024px;
   }
   .header-menu-all {
     margin-right: 20px;

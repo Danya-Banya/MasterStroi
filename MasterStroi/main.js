@@ -628,8 +628,6 @@ function autoLogin() {
   }
   console.log(`Автоматически зашел в Уч.Запись с помощью autoLogin()`);
   console.log(`Добро пожаловать ${user.name}!`);
-  
-  
 }
 document.addEventListener("DOMContentLoaded", () => {
   if (logined) {
@@ -664,9 +662,9 @@ function handleToggle(event) {
       el.style.color = "#fff";
     });
     document.querySelector(".are-title").style.color = " #000000";
-    document.querySelectorAll(".content-span").forEach((span)=>{
-      span.style.color = "#fff"
-    })
+    document.querySelectorAll(".content-span").forEach((span) => {
+      span.style.color = "#fff";
+    });
   } else {
     document.getElementById("main-body").style.backgroundColor = "#fff";
     document.getElementById("main-body").style.color = "#000000";
@@ -679,7 +677,7 @@ function showLogOut() {
 }
 
 function logOut() {
-  logined = false;  
+  logined = false;
   localStorage.removeItem("loggedUser");
   document.getElementById("login").classList.remove("hidden");
   document.querySelector(".for-logined").classList.add("hidden");
@@ -691,8 +689,7 @@ function logOut() {
   document.querySelector(".infoAccName").classList.remove("hidden");
   document.querySelector(".infoAccName").textContent = "Войти";
   document.querySelector(".logJr").classList.remove("hidden");
-  console.log('Вышел из Уч.Записи с помощью logOut()');
-  
+  console.log("Вышел из Уч.Записи с помощью logOut()");
 }
 function nope() {
   document.querySelector(".areYouSure-bg").classList.add("hidden");
@@ -846,7 +843,7 @@ function register() {
     nameErr.textContent ||
     phoneErr.textContent
   ) {
-    console.log("something went wrong in register()");
+    console.log("Что-то пошло не так в register()");
     return;
   }
   users.push(newUser);
@@ -859,7 +856,9 @@ function register() {
   document.getElementById("login").classList.add("hidden");
   document.getElementById("account-name").textContent = newUser.name;
   document.querySelector(".logined").textContent = newUser.name;
-  console.log(`Зарегистрирован как ${newUser.name}, logined в данный момент - ${logined}`);
+  console.log(
+    `Зарегистрирован как ${newUser.name}, logined в данный момент - ${logined}`
+  );
   console.log(`Список пользователей:`, users);
 }
 
@@ -982,7 +981,7 @@ function addToCartFromTop(productId, category) {
     };
     let isCartShowing = document.querySelector(".cart");
     if (isCartShowing.classList.contains("show")) {
-      cartNew = 0
+      cartNew = 0;
     } else if (isCartShowing.classList.contains("hidden")) {
       cartNew++;
     }
@@ -1217,33 +1216,60 @@ function checkLoginForCabinet() {
   }
 }
 
-function deleteAccount(){
-  let loggedUser = localStorage.getItem("loggedUser")
-  if(loggedUser){
-    console.log('Проверка');
-  } else{
-    console.log('not logined for deleteAccount()');
-    
+function areYouSureWantToDeleteAcc() {
+  document.querySelector(".account-bg").classList.add("hidden");
+  document.querySelector(".areYouSureToDelete-bg").classList.remove("hidden");
+}
+
+function deleteAccount() {
+  let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+  if (loggedUser) {
+    console.log("Проверка");
+    let findUserObj = users.findIndex((us) => us.id === loggedUser);
+    if (findUserObj) {
+      console.log("Вычислили", findUserObj);
+      users.splice(findUserObj, 1);
+      logined = false;
+      localStorage.setItem("savedUsers", JSON.stringify(users))
+      localStorage.removeItem("loggedUser");
+      document.getElementById("login").classList.remove("hidden");
+      document.querySelector(".for-logined").classList.add("hidden");
+      document.querySelector(".areYouSure-bg").classList.add("hidden");
+      document.querySelector(".account-bg").classList.add("hidden");
+      document.querySelector(".areYouSureToDelete-bg").classList.add("hidden")
+    } else {
+      console.log("Не вычислили");
+    }
+  } else {
+    console.log("not logined for deleteAccount()");
   }
-} deleteAccount()
+}
+function closeModalDeleteAcc() {
+  document.querySelector(".areYouSureToDelete-bg").classList.add("hidden");
+  document.querySelector(".account-bg").classList.remove("hidden");
+}
+function deleteCanceled() {
+  // document.querySelector(".account-bg").classList.remove("hidden")
+  document.querySelector(".areYouSureToDelete-bg").classList.add("hidden");
+}
 
-  // let userId = localStorage.getItem("loggedUser");
-  // if (!JSON.parse(userId)) return;
-  // let accountbg = document.querySelector(".account-bg");
-  // accountbg.classList.remove("hidden");
-  // let findUser = users.find((user) => user.id === JSON.parse(userId));
+// let userId = localStorage.getItem("loggedUser");
+// if (!JSON.parse(userId)) return;
+// let accountbg = document.querySelector(".account-bg");
+// accountbg.classList.remove("hidden");
+// let findUser = users.find((user) => user.id === JSON.parse(userId));
 
-  //   if(logined === false){
-  //   document.querySelector(".login-bg").classList.remove("hidden")
-  //   console.log(`зарегайся ${logined}`);
-  //   return
-  // } else{
-  //   console.log('ыпывп');
-    
-  // }
-  // let userId = localStorage.getItem("loggedUser")
-  // if(!JSON.parse(userId)) return
-  // if(userId){
-  //   console.log(`работает ${userId}`);
-    
-  // }
+//   if(logined === false){
+//   document.querySelector(".login-bg").classList.remove("hidden")
+//   console.log(`зарегайся ${logined}`);
+//   return
+// } else{
+//   console.log('ыпывп');
+
+// }
+// let userId = localStorage.getItem("loggedUser")
+// if(!JSON.parse(userId)) return
+// if(userId){
+//   console.log(`работает ${userId}`);
+
+// }

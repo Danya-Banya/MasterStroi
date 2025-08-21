@@ -93,7 +93,9 @@
     <div class="menu-bg"></div>
     <div class="menu">
       <img src="./Assets/menu-logo.png" alt="" />
-      <span onclick="checkLoginForCabinet()" class="personal-cabinet">Личный кабинет</span>
+      <span onclick="checkLoginForCabinet()" class="personal-cabinet"
+        >Личный кабинет</span
+      >
       <span onclick="showCart()" class="cart-link">Корзина</span>
       <label class="switch">
         <input type="checkbox" id="toggleSwitch" />
@@ -1063,7 +1065,7 @@
           <span class="account-number" id="account-number"></span>
           <a class="cabinet" id="pc" href="personal.html">Личный кабинет</a>
           <span class="logOut" onclick="showLogOut()">Выйти из аккаунта</span>
-          <span class="deleteAccount" onclick="deleteAccount()"
+          <span class="deleteAccount" onclick="areYouSureWantToDeleteAcc()"
             >Удалить аккаунт</span
           >
         </div>
@@ -1107,6 +1109,28 @@
 
           <button type="submit" class="submit-btn">Сохранить</button>
         </form>
+      </div>
+    </div>
+    <div class="areYouSureToDelete-bg hidden">
+      <div class="areYouSureToDelete-container">
+        <img
+          src="./Assets/white-x.png"
+          alt=""
+          class="closeAreYouSureToDelete"
+          onclick="closeModalDeleteAcc()"
+        />
+        <h1 class="areYouSureToDelete-title">
+          Вы действительно собираетесь удалить свою учётную запись?
+        </h1>
+        <span class="confirmation"
+          >Соглашаясь и нажимая на кнопку <span class="toRed">"Удалить"</span> вы навсегда
+          потеряете аккаунт и все данные о покупках этого аккаунта. <br />
+          Удалить уч.запись?</span
+        >
+        <div class="chooseTheButton">
+          <button class="deleteAccountForever" onclick="deleteAccount()">Удалить</button>
+          <button class="dontDeleteAccount" onclick="deleteCanceled()">Не удалять</button>
+        </div>
       </div>
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
