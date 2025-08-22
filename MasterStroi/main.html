@@ -233,37 +233,39 @@
     <div class="about" id="about">
       <div class="container">
         <div class="about-item">
-          <img class="about-image" src="./Assets/truck.svg" alt="" />
-          <div class="insetShadow"></div>
+          <div class="forAboutImages">
+            <img class="about-image" src="./Assets/truck.svg" alt="" />
+            <div class="insetShadow"></div>
+          </div>
           <div class="about-content">
             <h1 class="about-title">О нас</h1>
             <span class="about-info"
-              >«Мастер Строй» - надежная и недорогая тротуарная плитка в <br />
+              >«Мастер Строй» - надежная и недорогая тротуарная плитка в 
               Волоколамском районе</span
             >
             <p class="about-description1">
               Наша компания готова помочь вам и с первым и со вторым аспектом
-              данной задачи. В нашем каталоге вы <br />
+              данной задачи. В нашем каталоге вы 
               сможете подобрать желаемый вариант материала и сразу заказать
-              профессиональную укладку на вашем <br />
+              профессиональную укладку на вашем
               участке. Вниманию покупателей всегда доступна качественная и
-              прочная тротуарная плитка от производителя <br />
+              прочная тротуарная плитка от производителя 
               по оптимальной стоимости.
             </p>
             <p class="about-description2">
               Если вам нужна надежная тротуарная плитка, купить в Волоколамском
-              районе такой материал можно у нас, <br />
+              районе такой материал можно у нас, 
               цена продукции из каталога вас приятно удивит и не ударит по
-              бюджету. Оформить заказ можно прямо на <br />
+              бюджету. Оформить заказ можно прямо на 
               сайте. Если в процессе выбора вам понадобится консультация
-              специалиста, вы всегда можете заказать <br />
+              специалиста, вы всегда можете заказать 
               обратный звонок, используя специальную функцию на сайте, либо
-              самостоятельно позвонить менеджеру по <br />
+              самостоятельно позвонить менеджеру по 
               указанным телефонам.
             </p>
             <p class="about-description3">
               Теперь если вам нужна тротуарная плитка, вы знаете где ее можно
-              приобрести. «Мастер Строй» - компания- <br />
+              приобрести. «Мастер Строй» - компания- 
               производитель, которая гарантирует достойный уровень качества по
               приятной цене.
             </p>
@@ -1081,36 +1083,6 @@
       </div>
     </div>
 
-    <div class="changePassword-bg hidden">
-      <div class="changePass-box">
-        <img
-          src="./Assets/white-x.png"
-          alt=""
-          onclick="closeChangePassModal()"
-        />
-        <span class="changePass-title">Смена пароля</span>
-        <form class="changePass-form">
-          <label for="mailUser">Почта вашей уч. записи</label>
-          <input type="email" placeholder="Введите эл. почту" id="mailUser" />
-          <label for="new-password">Новый пароль</label>
-          <input
-            type="password"
-            id="new-password"
-            placeholder="Введите новый пароль"
-          />
-
-          <label for="confirm-password">Подтвердите пароль</label>
-          <input
-            type="password"
-            id="confirm-password"
-            placeholder="Повторите новый пароль"
-          />
-          <span id="incorrectPassword hidden"></span>
-
-          <button type="submit" class="submit-btn">Сохранить</button>
-        </form>
-      </div>
-    </div>
     <div class="areYouSureToDelete-bg hidden">
       <div class="areYouSureToDelete-container">
         <img
@@ -1123,13 +1095,18 @@
           Вы действительно собираетесь удалить свою учётную запись?
         </h1>
         <span class="confirmation"
-          >Соглашаясь и нажимая на кнопку <span class="toRed">"Удалить"</span> вы навсегда
-          потеряете аккаунт и все данные о покупках этого аккаунта. <br />
+          >Соглашаясь и нажимая на кнопку
+          <span class="toRed">"Удалить"</span> вы навсегда потеряете аккаунт и
+          все данные о покупках этого аккаунта. <br />
           Удалить уч.запись?</span
         >
         <div class="chooseTheButton">
-          <button class="deleteAccountForever" onclick="deleteAccount()">Удалить</button>
-          <button class="dontDeleteAccount" onclick="deleteCanceled()">Не удалять</button>
+          <button class="deleteAccountForever" onclick="deleteAccount()">
+            Удалить
+          </button>
+          <button class="dontDeleteAccount" onclick="deleteCanceled()">
+            Не удалять
+          </button>
         </div>
       </div>
     </div>

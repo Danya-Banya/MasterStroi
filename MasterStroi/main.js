@@ -729,7 +729,7 @@ function login() {
     (user) => user.email === mailInputValue && mailPassValue === user.password
   );
   if (findUser) {
-    console.log(`logged in as ${findUser.name} by login()`);
+    console.log(`Вошел как ${findUser.name} с помощью login()`);
     logined = true;
     localStorage.setItem("loggedUser", findUser.id);
     document.getElementById("login").classList.add("hidden");
@@ -901,7 +901,12 @@ document.querySelector(".account-x").addEventListener("click", () => {
   document.querySelector(".account-bg").classList.add("hidden");
 });
 function orderCall() {
-  if (!logined) return;
+  if (!logined){
+    document.querySelector(".login-bg").classList.remove("hidden")
+    document.querySelector(".menu").classList.remove("active")
+    document.querySelector(".menu-bg").classList.remove("active")
+    return
+  } 
   document.querySelector(".login-container").classList.add("hidden");
   document.querySelector(".register-container").classList.add("hidden");
   let modal = document.querySelector(".phone-container");
@@ -930,6 +935,8 @@ document.querySelector(".menu-bg").addEventListener("click", () => {
 function showCart() {
   if (!logined) {
     document.querySelector(".login-bg").classList.remove("hidden");
+    document.querySelector(".menu").classList.remove("active")
+    document.querySelector(".menu-bg").classList.remove("active")
     return;
   }
   let cart = document.querySelector(".cart");
@@ -942,7 +949,7 @@ function showCart() {
   cartNew = 0;
   updateCartIndicator();
 }
-
+window
 function getOffCart() {
   let cart = document.querySelector(".cart");
   cart.classList.remove("show");
@@ -1149,11 +1156,6 @@ function deliveryOrderClose() {
 function deliverySuccessClose() {
   document.querySelector(".deliverySuccess-bg").classList.add("hidden");
 }
-function openChangePassMail() {
-  document.querySelector(".changePassword-bg").classList.remove("hidden");
-  document.querySelector(".login-bg").classList.add("hidden");
-}
-
 function closePhoneModal() {
   document.querySelector(".login-container").classList.add("hidden");
   document.querySelector(".register-container").classList.add("hidden");
@@ -1162,13 +1164,6 @@ function closePhoneModal() {
   modal.classList.add("hidden");
   bg.classList.add("hidden");
 }
-document.addEventListener("DOMContentLoaded", () => {
-  let width = window.innerWidth;
-  if (width < 767) {
-    let logo = document.querySelector(".logo");
-    logo.src = "./Assets/menu-logo.png";
-  }
-});
 
 let form1 = document.querySelector(".changePass-form");
 form1.addEventListener("submit", function (event) {
@@ -1192,20 +1187,6 @@ form1.addEventListener("submit", function (event) {
 // }
 function closeChangePassModal() {
   document.querySelector(".changePassword-bg").classList.add("hidden");
-}
-
-function changePass() {
-  let mailInput = document.getElementById("mailUser").textContent;
-  let newPass = document.getElementById("new-password").textContent;
-  let confirmPass = document.getElementById("confirm-password").textContent;
-  let findExistEmail = users.find((u) => u.email === mailInput);
-  if (newPass !== confirmPass) {
-    document.getElementById("incorrectPassword").classList.add("hidden");
-    document.getElementById("incorrectPassword").textContent =
-      "Пароли не совпадают";
-  }
-  if (findExistEmail && newPass === confirmPass) {
-  }
 }
 
 function checkLoginForCabinet() {
@@ -1252,24 +1233,3 @@ function deleteCanceled() {
   // document.querySelector(".account-bg").classList.remove("hidden")
   document.querySelector(".areYouSureToDelete-bg").classList.add("hidden");
 }
-
-// let userId = localStorage.getItem("loggedUser");
-// if (!JSON.parse(userId)) return;
-// let accountbg = document.querySelector(".account-bg");
-// accountbg.classList.remove("hidden");
-// let findUser = users.find((user) => user.id === JSON.parse(userId));
-
-//   if(logined === false){
-//   document.querySelector(".login-bg").classList.remove("hidden")
-//   console.log(`зарегайся ${logined}`);
-//   return
-// } else{
-//   console.log('ыпывп');
-
-// }
-// let userId = localStorage.getItem("loggedUser")
-// if(!JSON.parse(userId)) return
-// if(userId){
-//   console.log(`работает ${userId}`);
-
-// }
