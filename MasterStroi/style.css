@@ -2019,20 +2019,29 @@ form input:focus {
   }
   .about {
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     background-color: #000000;
     overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    background: url("./Assets/about/forAdaptiveTruck.jpg") no-repeat center/cover;
+  }
+  .about .container{
+    max-height: none;
+    min-height: 100%;
   }
   .about-title {
     margin-top: 60px;
   }
   .about-item {
     position: relative;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 0;
     align-items: center;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    min-height: 100%;
+    max-height: none;
+    background: rgba(0, 0, 0, 0.7);
   }
   .about-image {
     width: 100%;
@@ -2047,7 +2056,7 @@ form input:focus {
   }
   .about-imageMedia {
     display: block;
-    top: 0;
+    bottom: 0;
     left: 0;
     object-fit: cover;
     display: block;
@@ -2067,17 +2076,25 @@ form input:focus {
     z-index: 1;
   }
   .about-content {
-    position: absolute;
     bottom: 0;
     z-index: 2;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    width: 100%;
     height: 100%;
   }
   .about-description1,
   .about-description2,
   .about-description3 {
     font-size: 16px;
+  }
+  .organization {
+    margin-top: 15px;
+  }
+  .about-btn {
+    display: inline-block;
+    margin: 0;
+    margin-top: 20px;
   }
   .top {
     max-width: 100vw;
