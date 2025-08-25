@@ -856,6 +856,9 @@ function register() {
   document.getElementById("login").classList.add("hidden");
   document.getElementById("account-name").textContent = newUser.name;
   document.querySelector(".logined").textContent = newUser.name;
+  document.querySelector(".logined").style.color = "#ff6b15ff";
+  document.querySelector(".logined").classList.remove("hidden");
+  document.querySelector(".infoAccName").classList.add("hidden");
   console.log(
     `Зарегистрирован как ${newUser.name}, logined в данный момент - ${logined}`
   );
@@ -901,12 +904,12 @@ document.querySelector(".account-x").addEventListener("click", () => {
   document.querySelector(".account-bg").classList.add("hidden");
 });
 function orderCall() {
-  if (!logined){
-    document.querySelector(".login-bg").classList.remove("hidden")
-    document.querySelector(".menu").classList.remove("active")
-    document.querySelector(".menu-bg").classList.remove("active")
-    return
-  } 
+  if (!logined) {
+    document.querySelector(".login-bg").classList.remove("hidden");
+    document.querySelector(".menu").classList.remove("active");
+    document.querySelector(".menu-bg").classList.remove("active");
+    return;
+  }
   document.querySelector(".login-container").classList.add("hidden");
   document.querySelector(".register-container").classList.add("hidden");
   let modal = document.querySelector(".phone-container");
@@ -935,8 +938,8 @@ document.querySelector(".menu-bg").addEventListener("click", () => {
 function showCart() {
   if (!logined) {
     document.querySelector(".login-bg").classList.remove("hidden");
-    document.querySelector(".menu").classList.remove("active")
-    document.querySelector(".menu-bg").classList.remove("active")
+    document.querySelector(".menu").classList.remove("active");
+    document.querySelector(".menu-bg").classList.remove("active");
     return;
   }
   let cart = document.querySelector(".cart");
@@ -949,7 +952,7 @@ function showCart() {
   cartNew = 0;
   updateCartIndicator();
 }
-window
+window;
 function getOffCart() {
   let cart = document.querySelector(".cart");
   cart.classList.remove("show");
@@ -1165,12 +1168,6 @@ function closePhoneModal() {
   bg.classList.add("hidden");
 }
 
-let form1 = document.querySelector(".changePass-form");
-form1.addEventListener("submit", function (event) {
-  event.preventDefault();
-  changePass();
-});
-
 // function setPass() {
 //   let nodeMail = require('nodemailer');
 
@@ -1211,18 +1208,25 @@ function deleteAccount() {
       console.log("Вычислили", findUserObj);
       users.splice(findUserObj, 1);
       logined = false;
-      localStorage.setItem("savedUsers", JSON.stringify(users))
+      localStorage.setItem("savedUsers", JSON.stringify(users));
       localStorage.removeItem("loggedUser");
       document.getElementById("login").classList.remove("hidden");
       document.querySelector(".for-logined").classList.add("hidden");
       document.querySelector(".areYouSure-bg").classList.add("hidden");
       document.querySelector(".account-bg").classList.add("hidden");
-      document.querySelector(".areYouSureToDelete-bg").classList.add("hidden")
+      document.querySelector(".areYouSureToDelete-bg").classList.add("hidden");
+      let orders = JSON.parse(localStorage.getItem("orders")) || [];
+      orders = orders.filter((order) => order.user !== loggedUser);
+      localStorage.setItem("orders", JSON.stringify(orders));
+      document.querySelector(".logined").classList.add("hidden");
+      document.querySelector(".infoAccName").classList.remove("hidden");
     } else {
       console.log("Не вычислили");
     }
   } else {
-    console.log("not logined for deleteAccount()");
+    console.log(
+      "Не может удалить аккаунт, так как еще не вошел или не зарегистрировался deleteAccount()"
+    );
   }
 }
 function closeModalDeleteAcc() {
@@ -1230,6 +1234,5 @@ function closeModalDeleteAcc() {
   document.querySelector(".account-bg").classList.remove("hidden");
 }
 function deleteCanceled() {
-  // document.querySelector(".account-bg").classList.remove("hidden")
   document.querySelector(".areYouSureToDelete-bg").classList.add("hidden");
 }
